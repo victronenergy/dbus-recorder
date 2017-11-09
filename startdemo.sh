@@ -14,8 +14,11 @@ start() {
 }
 
 # Start services
-start grid.dat
-start pvinverter.dat
 start solarcharger.dat
 start vebus.dat
-start battery.dat
+start battery-house.dat
+start battery-hydraulic.dat
+start tank_fwater.dat
+start tank_fuel.dat
+start tank_oil.dat
+start tank_bwater.dat
