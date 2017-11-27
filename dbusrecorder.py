@@ -94,7 +94,6 @@ class MyDbusdbusrecorderObject(dbus.service.Object):
 	@dbus.service.method(InterfaceBusItem, in_signature = 'si', out_signature = 's')
 	def GetDescription(self, language, length):
 		return 'no description available'
-	
 
 	## Dbus method Get
 	# Returns the value of the property of the dbus-object-path.
@@ -121,7 +120,7 @@ class MyDbusdbusrecorderObject(dbus.service.Object):
 			if self._properties['Value'] != dbus.Array([]):
 				value = self._properties['Value']
 		return value
-	
+
 	## Dbus method GetText
 	# Returns the value as string of the dbus-object-path.
 	# @return text A text-value or '' (error)
@@ -147,11 +146,11 @@ class MyDbusdbusrecorderObject(dbus.service.Object):
 			self.PropertiesChanged(self._properties)
 			result = 0
 		return result
-	
+
 	def setProperties(self, properties):
 		self._properties = properties
 		self.PropertiesChanged(properties)
-	
+
 	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
 	def PropertiesChanged(self, properties):
 		tracing.log.debug('signal PropertiesChanged %s %s' % (self._object_path, properties))
@@ -161,7 +160,7 @@ class PropertiesChangedData(object):
 		self._time = time
 		self._dbusObjectPath = dbusObjectPath
 		self._changes = changes
-	
+
 	def __str__(self):
 		return "PropertiesChangedData:\n" + str(self._time) + '\n' + str(self._dbusObjectPath) + '\n' + str(self._changes) + '\n'
 
@@ -192,7 +191,7 @@ def handlerNameOwnerChanged(name, oldOwner, newOwner):
 # @param stack the call-stack.
 def handlerSignals(signum, stack):
 	global filehandle
-	
+
 	tracing.log.warning('handlerSignals received: %d' % signum)
 	if mode == PLAY:
 		filehandle.close()
@@ -304,7 +303,7 @@ def run():
 	# Print the logscript version
 	tracing.log.info('dbusrecorder version is: 0x%04x' % version)
 	tracing.log.info('dbusrecorder PID is: %d' % getpid())
-	
+
 	# Trace the python version.
 	pythonVersion = platform.python_version()
 	tracing.log.debug('Current python version: %s' % pythonVersion)
@@ -363,7 +362,7 @@ def main(argv):
 	global service
 	global filename
 	global duration
-	
+
 	try:
 		opts, args = getopt.getopt(argv, "vhctdp", ["help", "version", "record=", "file=", "duration=", "banner"])
 	except getopt.GetoptError:
@@ -409,5 +408,5 @@ def main(argv):
 			print("dbusrecorder 0x%04x" % version)
 
 	run()
-	
+
 main(sys.argv[1:])
