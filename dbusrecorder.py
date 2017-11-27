@@ -8,7 +8,7 @@ from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 import dbus.service
 from gobject import timeout_add, source_remove, MainLoop
-from os import path, getpid, _exit
+from os import path, getpid, _exit, environ
 from time import time
 import sys
 import signal
@@ -316,16 +316,12 @@ def run():
 	signal.signal(signal.SIGTERM, handlerSignals) # 15: Terminate
 
 	# get on the bus
-	try:
-		bus = dbus.SystemBus()
-	except Exception, ex:
-		tracing.log.error("no dbus systembus")
-		_exit(0)
+	bus = dbus.SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in environ else dbus.SystemBus()
 
 	# subscribe to NameOwnerChange for bus connect / disconnect events.. 
 	# org.freedesktop.DBus / NameOwnerChanged
 	bus.add_signal_receiver(handlerNameOwnerChanged, signal_name='NameOwnerChanged')
-	
+
 	# get named devices on the bus
 	names = bus.list_names()
 
