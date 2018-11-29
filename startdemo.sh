@@ -8,4 +8,4 @@ killall vedirect_dbus
 killall gps_dbus
 
 # Start the demo
-$(dirname $0)/play.sh
+$(dirname $0)/play.sh "$@"
