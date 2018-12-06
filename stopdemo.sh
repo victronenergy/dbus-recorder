@@ -8,6 +8,6 @@ echo "PID(dbusrecorder) = $PID"
 if [ "$1" != "booting" ]; then
     # Start services
     svc -u /service/serial-starter
-    svc -u /service/vecan-mk2.$(basename $(cat /etc/venus/mkx_port))
+    svc -u /service/mk2-dbus.$(basename $(cat /etc/venus/mkx_port))
     svc -u /service/vecan
 fi
