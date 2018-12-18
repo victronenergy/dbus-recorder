@@ -12,20 +12,30 @@ class PropertiesChangedData(object):
 
 def typeof(v):
     if isinstance(v, dbus.types.Int32):
-        return "INT32:{}".format(v)
+        return "INT32"
     if isinstance(v, dbus.types.UInt32):
-        return "UINT32:{}".format(v)
+        return "UINT32"
     if isinstance(v, dbus.types.UInt16):
-        return "UINT16:{}".format(v)
+        return "UINT16"
     if isinstance(v, dbus.types.Byte):
-        return "BYTE:{}".format(int(v))
+        return "BYTE"
     if isinstance(v, dbus.types.Double):
-        return "DOUBLE:{}".format(v)
+        return "DOUBLE"
     if isinstance(v, dbus.types.Array):
-        return "ARRAY:{}".format(json.dumps([typeof(x) for x in v]))
+        if len(v):
+            return "ARRAY[{}]".format(typeof(v[0]))
+        else:
+            return "ARRAY"
     if isinstance(v, dbus.types.String):
-        return "STRING:{}".format(v)
-    return "UNKNOWN:{}".format(v)
+        return "STRING"
+    return "UNKNOWN"
+
+def fmt(v):
+    if isinstance(v, dbus.types.Array):
+        return json.dumps([fmt(x) for x in v])
+    if isinstance(v, dbus.types.Byte):
+        return int(v)
+    return str(v)
 
 writer = csvwriter(sys.stdout, dialect=excel_tab)
 with open(sys.argv[1], 'rb') as fp:
@@ -34,7 +44,7 @@ with open(sys.argv[1], 'rb') as fp:
 
     values = pickle.load(fp)
     for k, v in values.iteritems():
-        writer.writerow([k, typeof(v['Value']), v['Text']])
+        writer.writerow([k, typeof(v['Value']), fmt(v['Value']), v['Text']])
     writer.writerow([])
 
     while True:
@@ -43,7 +53,7 @@ with open(sys.argv[1], 'rb') as fp:
             change = pickle.load(fp)
             value = change._changes['Value']
 
-            writer.writerow([change._time, change._dbusObjectPath, typeof(value), change._changes['Text']])
+            writer.writerow([change._time, change._dbusObjectPath, typeof(value), fmt(value), change._changes['Text']])
 
         except EOFError:
             break

@@ -5,27 +5,29 @@ import json
 import pickle
 
 class PropertiesChangedData(object):
-    def __init__(self, time, dbusObjectPath, changes):
-        self._time = time
-        self._dbusObjectPath = dbusObjectPath
-        self._changes = changes
+	def __init__(self, time, dbusObjectPath, changes):
+		self._time = time
+		self._dbusObjectPath = dbusObjectPath
+		self._changes = changes
 
-def demarshall(v):
-	if v.startswith('INT32:'):
-		return dbus.types.Int32(v[6:])
-	if v.startswith("UINT32:"):
-		return dbus.types.UInt32(v[7:])
-	if v.startswith("UINT16:"):
-		return dbus.types.UInt16(v[7:])
-	if v.startswith("BYTE:"):
-		return dbus.types.Byte(int(v[5:]))
-	if v.startswith("DOUBLE:"):
-		return dbus.types.Double(v[7:])
-	if v.startswith("ARRAY:"):
-		v = json.loads(v[6:])
-		return dbus.types.Array([demarshall(x) for x in v])
-	if v.startswith("STRING:"):
-		return dbus.types.String(v[7:])
+def demarshall(typ, v):
+	de = {
+		"INT32": dbus.types.Int32,
+		"UINT32": dbus.types.UInt32,
+		"UINT16": dbus.types.UInt16,
+		"BYTE": lambda x: dbus.types.Byte(int(x)),
+		"DOUBLE": dbus.types.Double,
+		"STRING": dbus.types.String,
+	}
+
+	if typ.startswith("ARRAY"):
+		subtype = typ[6:-1]
+		v = json.loads(v)
+		return dbus.types.Array([demarshall(subtype, x) for x in v])
+
+	if typ in de:
+		return de[typ](v)
+
 	return None
 
 def main():
@@ -42,8 +44,8 @@ def main():
 		if not (row and row[0]):
 			break
 
-		path, value, text = row[:3]
-		value = demarshall(value)
+		path, typ, value, text = row[:4]
+		value = demarshall(typ, value)
 		di[unicode(path)] = {
 			'Value': value,
 			'Text': text,
@@ -57,10 +59,10 @@ def main():
 	# dbus.Dictionary({dbus.String(u'Text'): dbus.String(u'408W'),
 	# dbus.String(u'Value'): dbus.Int32(408)})
 	for row in reader:
-		time, path, value, text = row[:4]
+		time, path, typ, value, text = row[:5]
 		changes = dbus.types.Dictionary({
 			dbus.types.String('Text'): dbus.types.String(text),
-			dbus.types.String('Value'): demarshall(value)
+			dbus.types.String('Value'): demarshall(typ, value)
 		})
 		pickle.dump(PropertiesChangedData(int(time), path, changes),
 			fo, protocol=2)
