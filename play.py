@@ -25,6 +25,26 @@ class SessionBus(dbus.bus.BusConnection):
     def __new__(cls):
         return dbus.bus.BusConnection.__new__(cls, dbus.bus.BusConnection.TYPE_SESSION)
 
+def wrap_dbus_value(v):
+	""" Stripped down version, since everything is already dbus wrapped, we
+	    just need to handle empty lists. """
+	if isinstance(v, list) and len(v) == 0:
+		return dbus.Array([], signature=dbus.Signature('u'), variant_level=1)
+	return v
+
+class DbusRootObject(dbus.service.Object):
+	def __init__(self, busName, values):
+		super(DbusRootObject, self).__init__(busName, '/')
+		self.values = values
+
+	@dbus.service.method(InterfaceBusItem, out_signature = 'v')
+	def GetValue(self):
+		values = { k[1:]: wrap_dbus_value(v._properties['Value']) \
+			for k, v in self.values.items() \
+			if 'Value' in v._properties }
+		return dbus.Dictionary(values, signature=dbus.Signature('sv'),
+			variant_level=1)
+
 class DbusPathObject(dbus.service.Object):
 	## Constructor of MyDbusObject
 	#
@@ -190,6 +210,7 @@ def main():
 	DBusGMainLoop(set_as_default=True)
 
 	services = defaultdict(dict)
+	roots = []
 	events = EventStream(*args.datafiles)
 
 	# Register dbus services/paths
@@ -200,6 +221,8 @@ def main():
 		for path, props in it.values.iteritems():
 			logger.debug("path %s properties %s" % (path, props))
 			services[it.service][path] = DbusPathObject(busName, path, props)
+
+		roots.append(DbusRootObject(busName, services[it.service]))
 
 	gobject.timeout_add(int(1000.0/args.speed), Timer(services, events))
 	gobject.MainLoop().run()
