@@ -1,3 +1,5 @@
+#!/usr/bin/python -u
+
 import sys
 import os
 from dbus.mainloop.glib import DBusGMainLoop
@@ -11,8 +13,6 @@ from functools import total_ordering
 from itertools import izip, repeat
 import heapq
 from argparse import ArgumentParser
-
-logger = logging.getLogger()
 
 InterfaceBusItem = 'com.victronenergy.BusItem'
 InterfaceProperties = 'org.freedesktop.DBus.Properties'
@@ -58,7 +58,7 @@ class DbusPathObject(dbus.service.Object):
 
 	@dbus.service.method(InterfaceBusItem, out_signature = 'v')
 	def GetValue(self):
-		logger.debug("GetValue %s" % self._objectPath)
+		logging.debug("GetValue %s" % self._objectPath)
 		value = dbus.Array([], signature=dbus.Signature('i'), variant_level=1)
 		if 'Value' in self._properties:
 			if self._properties['Value'] != dbus.Array([]):
@@ -70,7 +70,7 @@ class DbusPathObject(dbus.service.Object):
 	# @return text A text-value or '' (error)
 	@dbus.service.method(InterfaceBusItem, out_signature = 's')
 	def GetText(self):
-		logger.debug("GetText %s" % self._objectPath)
+		logging.debug("GetText %s" % self._objectPath)
 		text = '---'
 		if 'Text' in self._properties:
 			text = self._properties['Text']
@@ -82,7 +82,7 @@ class DbusPathObject(dbus.service.Object):
 	# @return completion-code When successful a 0 is return, and when not a -1 is returned.
 	@dbus.service.method(InterfaceBusItem, in_signature = 'v', out_signature = 'i')
 	def SetValue(self, value):
-		logger.debug("SetValue %s" % self._objectPath)
+		logging.debug("SetValue %s" % self._objectPath)
 		result = -1
 		if 'Value' in self._properties:
 			self._properties['Value'] = value
@@ -97,7 +97,7 @@ class DbusPathObject(dbus.service.Object):
 
 	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
 	def PropertiesChanged(self, properties):
-		logger.debug('signal PropertiesChanged %s %s' % (self._object_path, properties))
+		logging.debug('signal PropertiesChanged %s %s' % (self._object_path, properties))
 
 @total_ordering
 class PropertiesChangedData(object):
@@ -169,7 +169,7 @@ class Timer(object):
 				service = self.services[servicename]
 				if servicepath in service:
 					changes = evt[0]._changes
-					logger.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
+					logging.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
 					service[servicepath].setProperties(changes)
 					self.services[servicename]
 				evt = self.events.next()
@@ -211,21 +211,25 @@ def main():
 
 	services = defaultdict(dict)
 	roots = []
+	logging.info("Opening recordings")
 	events = EventStream(*args.datafiles)
 
 	# Register dbus services/paths
 	for it in events.streams:
 		# Every stream gets its own dbus connection.
+		logging.info("Initialising service {}".format(it.service))
 		bus = SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in os.environ else SystemBus()
 		busName = dbus.service.BusName(it.service, bus)
 		for path, props in it.values.iteritems():
-			logger.debug("path %s properties %s" % (path, props))
+			logging.debug("path %s properties %s" % (path, props))
 			services[it.service][path] = DbusPathObject(busName, path, props)
 
 		roots.append(DbusRootObject(busName, services[it.service]))
 
+	logging.info("Stage set, starting simulation")
 	gobject.timeout_add(int(1000.0/args.speed), Timer(services, events))
 	gobject.MainLoop().run()
 			
 if __name__ == "__main__":
+	logging.basicConfig(level=logging.INFO)
 	main()
