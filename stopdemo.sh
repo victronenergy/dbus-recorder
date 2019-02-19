@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Stop services
-PID=`pgrep -f dbusrecorder.py | tr '\n' ' '`
-echo "PID(dbusrecorder) = $PID"
-[ -z "$PID" ] || kill -9 $PID
+# Stop demo
+pgrep -f play.py | xargs -r kill
 
 if [ "$1" != "booting" ]; then
     # Start services
