@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python3 -u
 
 ## @package kwhcounters
 # Reads the counters from dbus-vebus-device and calculates derived data
@@ -7,7 +7,7 @@
 from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 import dbus.service
-from gobject import timeout_add, source_remove, MainLoop
+from gi.repository.GLib import timeout_add, source_remove, MainLoop
 from os import path, getpid, _exit, environ
 from time import time
 import sys

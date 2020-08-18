@@ -1,16 +1,17 @@
-#!/usr/bin/python -u
+#!/usr/bin/python3 -u
 
 import sys
 import os
 from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 import dbus.service
-import gobject
+from gi.repository import GObject as gobject
+from gi.repository import GLib
 import pickle
 import logging
 from collections import defaultdict
 from functools import total_ordering
-from itertools import izip, repeat
+from itertools import repeat
 import heapq
 from argparse import ArgumentParser
 
@@ -40,7 +41,7 @@ class DbusRootObject(dbus.service.Object):
 	@dbus.service.method(InterfaceBusItem, out_signature = 'v')
 	def GetValue(self):
 		values = { k[1:]: wrap_dbus_value(v._properties['Value']) \
-			for k, v in self.values.items() \
+			for k, v in list(self.values.items()) \
 			if 'Value' in v._properties }
 		return dbus.Dictionary(values, signature=dbus.Signature('sv'),
 			variant_level=1)
@@ -121,7 +122,7 @@ class PickleIterator(object):
 	def __iter__(self):
 		return self
 
-	def next(self):
+	def __next__(self):
 		if self.fp.closed:
 			raise StopIteration
 
@@ -137,16 +138,15 @@ class EventStream(object):
 		self.reset()
 
 	def reset(self):
-		self.streams = filter(lambda x: x is not None,
-			(open_recording(fn) for fn in self.args))
+		self.streams = [x for x in (open_recording(fn) for fn in self.args) if x is not None]
 		self.events = sort_streams(*self.streams)
 		self.current = None
 
 	def __iter__(self):
 		return self
 
-	def next(self):
-		self.current = self.events.next()
+	def __next__(self):
+		self.current = next(self.events)
 		return self.current
 
 class Timer(object):
@@ -158,7 +158,7 @@ class Timer(object):
 
 	def __call__(self):
 		if self.events.current is None:
-			evt = self.events.next()
+			evt = next(self.events)
 		else:
 			evt = self.events.current
 
@@ -172,11 +172,11 @@ class Timer(object):
 					logging.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
 					service[servicepath].setProperties(changes)
 					self.services[servicename]
-				evt = self.events.next()
+				evt = next(self.events)
 		except StopIteration:
 			self.events.reset()
 			self.tickcount = 0
-			evt = self.events.next()
+			evt = next(self.events)
 		else:
 			self.tickcount += 1
 
@@ -196,7 +196,7 @@ def open_recording(fn):
 def sort_streams(*args):
 	""" args is a list of iterables, The smallest item is yielded each time.
 	"""
-	streams = [izip(c, repeat(c.service)) for c in args]
+	streams = [zip(c, repeat(c.service)) for c in args]
 	return heapq.merge(*streams)
 
 def main():
@@ -220,15 +220,15 @@ def main():
 		logging.info("Initialising service {}".format(it.service))
 		bus = SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in os.environ else SystemBus()
 		busName = dbus.service.BusName(it.service, bus)
-		for path, props in it.values.iteritems():
+		for path, props in it.values.items():
 			logging.debug("path %s properties %s" % (path, props))
 			services[it.service][path] = DbusPathObject(busName, path, props)
 
 		roots.append(DbusRootObject(busName, services[it.service]))
 
 	logging.info("Stage set, starting simulation")
-	gobject.timeout_add(int(1000.0/args.speed), Timer(services, events))
-	gobject.MainLoop().run()
+	GLib.timeout_add(int(1000.0/args.speed), Timer(services, events))
+	GLib.MainLoop().run()
 			
 if __name__ == "__main__":
 	logging.basicConfig(level=logging.INFO)
