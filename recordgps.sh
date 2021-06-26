@@ -1,3 +1,3 @@
 #!/bin/bash
-export PYTHONPATH=/opt/color-control/pythonshared
-/opt/color-control/dbusrecorder/dbusrecorder.py --record com.victronenergy.gps --file=/opt/color-control/dbusrecorder/gps.dat --duration=2700 &
+export PYTHONPATH=/opt/victronenergy/pythonshared
+/opt/victronenergy/dbusrecorder/dbusrecorder.py --record com.victronenergy.gps --file=/opt/victronenergy/dbusrecorder/gps.dat --duration=2700 &
