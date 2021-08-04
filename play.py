@@ -190,7 +190,7 @@ class Timer(object):
 
 def open_recording(fn):
 	fp = open(fn, 'rb')
-	unpickler = Unpickler(fp)
+	unpickler = Unpickler(fp, encoding='UTF-8')
 	try:
 		service = unpickler.load()
 		values = unpickler.load()
