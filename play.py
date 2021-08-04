@@ -5,7 +5,6 @@ import os
 from dbus.mainloop.glib import DBusGMainLoop
 import dbus
 import dbus.service
-from gi.repository import GObject as gobject
 from gi.repository import GLib
 import pickle
 import logging
@@ -32,6 +31,15 @@ def wrap_dbus_value(v):
 	if isinstance(v, list) and len(v) == 0:
 		return dbus.Array([], signature=dbus.Signature('u'), variant_level=1)
 	return v
+
+class Unpickler(pickle.Unpickler):
+	# Support for older pickles
+	_replacements = {
+		('dbus', 'UTF8String'): ('dbus', 'String')
+	}
+	def find_class(self, module, name):
+		module, name = self._replacements.get((module, name), (module, name))
+		return super().find_class(module, name)
 
 class DbusRootObject(dbus.service.Object):
 	def __init__(self, busName, values):
@@ -114,22 +122,18 @@ class PropertiesChangedData(object):
 		return self._time < other._time
 
 class PickleIterator(object):
-	def __init__(self, service, values, fp):
+	def __init__(self, unpickler, service, values):
+		self.unpickler = unpickler
 		self.service = service
 		self.values = values
-		self.fp = fp
 
 	def __iter__(self):
 		return self
 
 	def __next__(self):
-		if self.fp.closed:
-			raise StopIteration
-
 		try:
-			return pickle.load(self.fp)
+			return self.unpickler.load()
 		except EOFError:
-			self.fp.close()
 			raise StopIteration
 
 class EventStream(object):
@@ -184,14 +188,15 @@ class Timer(object):
 
 def open_recording(fn):
 	fp = open(fn, 'rb')
+	unpickler = Unpickler(fp)
 	try:
-		service = pickle.load(fp)
-		values = pickle.load(fp)
+		service = unpickler.load()
+		values = unpickler.load()
 	except EOFError:
 		fp.close()
 		return None
 
-	return PickleIterator(service, values, fp)
+	return PickleIterator(unpickler, service, values)
 
 def sort_streams(*args):
 	""" args is a list of iterables, The smallest item is yielded each time.
