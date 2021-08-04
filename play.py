@@ -101,6 +101,8 @@ class DbusPathObject(dbus.service.Object):
 		return result
 
 	def setProperties(self, properties):
+		# Make sure it is wrapped. If no Value, substitute invalid.
+		properties['Value'] = wrap_dbus_value(properties.get('Value', []))
 		self._properties = properties
 		self.PropertiesChanged(properties)
 
