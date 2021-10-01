@@ -42,6 +42,8 @@ class Unpickler(pickle.Unpickler):
 		return super().find_class(module, name)
 
 class DbusRootObject(dbus.service.Object):
+	_objectPath = '/'
+
 	def __init__(self, busName, values):
 		super(DbusRootObject, self).__init__(busName, '/')
 		self.values = values
@@ -50,9 +52,37 @@ class DbusRootObject(dbus.service.Object):
 	def GetValue(self):
 		values = { k[1:]: wrap_dbus_value(v._properties['Value']) \
 			for k, v in list(self.values.items()) \
-			if 'Value' in v._properties }
+			if hasattr(v, '_properties') and 'Value' in v._properties }
 		return dbus.Dictionary(values, signature=dbus.Signature('sv'),
 			variant_level=1)
+
+	def setProperties(self, properties):
+		values = properties['Value']
+		texts = properties['Text']
+		for k, v in values.items():
+			if not k:
+				continue # safeguard
+			p = '/' + k
+			changes = {'Value': v }
+			try:
+				changes['Text'] = texts[k]
+			except KeyError:
+				pass
+
+			# Pass on to DbusPathObject
+			try:
+				self.values[p]._setProperties(changes)
+			except KeyError:
+				pass
+
+		# Send PropertiesChanged. Make sure it has the right signature
+		# since python-dbus will guess wrong.
+		self.PropertiesChanged({ k: dbus.types.Dictionary(v, signature='sv')
+			for k, v in properties.items() })
+
+	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
+	def PropertiesChanged(self, properties):
+		logging.debug('signal PropertiesChanged %s %s' % ('/', properties))
 
 class DbusPathObject(dbus.service.Object):
 	## Constructor of MyDbusObject
@@ -100,10 +130,13 @@ class DbusPathObject(dbus.service.Object):
 			result = 0
 		return result
 
-	def setProperties(self, properties):
+	def _setProperties(self, properties):
 		# Make sure it is wrapped. If no Value, substitute invalid.
 		properties['Value'] = wrap_dbus_value(properties.get('Value', []))
 		self._properties = properties
+
+	def setProperties(self, properties):
+		self._setProperties(properties)
 		self.PropertiesChanged(properties)
 
 	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
@@ -177,7 +210,6 @@ class Timer(object):
 					changes = evt[0]._changes
 					logging.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
 					service[servicepath].setProperties(changes)
-					self.services[servicename]
 				evt = next(self.events)
 		except StopIteration:
 			self.events.reset()
@@ -217,7 +249,6 @@ def main():
 	DBusGMainLoop(set_as_default=True)
 
 	services = defaultdict(dict)
-	roots = []
 	logging.info("Opening recordings")
 	events = EventStream(*args.datafiles)
 
@@ -231,7 +262,7 @@ def main():
 			logging.debug("path %s properties %s" % (path, props))
 			services[it.service][path] = DbusPathObject(busName, path, props)
 
-		roots.append(DbusRootObject(busName, services[it.service]))
+		services[it.service]['/'] = DbusRootObject(busName, services[it.service])
 
 	logging.info("Stage set, starting simulation")
 	GLib.timeout_add(int(1000.0/args.speed), Timer(services, events))
