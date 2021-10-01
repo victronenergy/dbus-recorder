@@ -11,9 +11,7 @@ For a full list options, see the help:
 $ ./dbusrecorder.py --help
 Usage: ./dbusrecorder [OPTION]
 -h, --help    display this help and exit
--c            enable tracing to console (standard off)
--t            enable tracing to file (standard off)
--d            set tracing level to debug (standard info)
+-d            set log level to debug (standard info)
 -v, --version	returns the program version
 --record	    record specified dbus-service to specified file
 --duration	  time duration recording in seconds (0 is infinite)
