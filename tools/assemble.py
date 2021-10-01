@@ -25,17 +25,30 @@ def demarshall(typ, v):
 		v = json.loads(v)
 		return dbus.types.Array([demarshall(subtype, x) for x in v])
 
+	if typ == "DICT":
+		v = json.loads(v)
+		return dbus.types.Dictionary({
+			dbus.types.String(k): demarshall(x, y) for k, (x, y) in v.items()})
+
 	if typ in de:
 		return de[typ](v)
 
 	return None
 
-def main():
-	fp = open(sys.argv[1], 'rb')
-	fo = open(sys.argv[2], 'wb')
-	reader = csvreader(fp, dialect=excel_tab)
+def demarshall_text(typ, t):
+	if typ == "DICT":
+		t = json.loads(t)
+		return dbus.types.Dictionary({
+			dbus.types.String(k): dbus.types.String(v) for k, v in t.items()})
+	
+	return dbus.types.String(t)
 
-	service = reader.next()[0]
+def main():
+	fp = open(sys.argv[1], 'r', encoding='UTF-8')
+	fo = open(sys.argv[2], 'wb')
+	reader = csvreader(fp, dialect=excel_tab, quotechar="'")
+
+	service = next(reader)[0]
 	pickle.dump(service, fo, protocol=2)
 
 	# Initial values
@@ -46,7 +59,7 @@ def main():
 
 		path, typ, value, text = row[:4]
 		value = demarshall(typ, value)
-		di[unicode(path)] = {
+		di[path] = {
 			'Value': value,
 			'Text': text,
 			'Valid': value != []
@@ -61,7 +74,7 @@ def main():
 	for row in reader:
 		time, path, typ, value, text = row[:5]
 		changes = dbus.types.Dictionary({
-			dbus.types.String('Text'): dbus.types.String(text),
+			dbus.types.String('Text'): demarshall_text(typ, text),
 			dbus.types.String('Value'): demarshall(typ, value)
 		})
 		pickle.dump(PropertiesChangedData(int(time), path, changes),
