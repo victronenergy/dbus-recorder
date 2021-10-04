@@ -13,6 +13,9 @@ from functools import total_ordering
 from itertools import repeat
 import heapq
 from argparse import ArgumentParser
+import json
+from csv import reader as csvreader
+from csv import excel_tab
 
 InterfaceBusItem = 'com.victronenergy.BusItem'
 InterfaceProperties = 'org.freedesktop.DBus.Properties'
@@ -31,6 +34,27 @@ def wrap_dbus_value(v):
 	if isinstance(v, list) and len(v) == 0:
 		return dbus.Array([], signature=dbus.Signature('u'), variant_level=1)
 	return v
+
+# Used for CSV to dbus wrapping
+def demarshall(typ, v):
+	de = {
+		"INT32": dbus.types.Int32,
+		"UINT32": dbus.types.UInt32,
+		"UINT16": dbus.types.UInt16,
+		"BYTE": lambda x: dbus.types.Byte(int(x)),
+		"DOUBLE": dbus.types.Double,
+		"STRING": dbus.types.String,
+	}
+
+	if typ.startswith("ARRAY"):
+		subtype = typ[6:-1]
+		v = json.loads(v)
+		return dbus.types.Array([demarshall(subtype, x) for x in v])
+
+	if typ in de:
+		return de[typ](v)
+
+	return None
 
 class Unpickler(pickle.Unpickler):
 	# Support for older pickles
@@ -171,6 +195,25 @@ class PickleIterator(object):
 		except EOFError:
 			raise StopIteration
 
+class CsvIterator(object):
+	def __init__(self, csvreader, service, values):
+		self.csvreader = csvreader
+		self.service = service # com.victronenergy.battery.whatever
+		self.values = values # /Dc/0/Voltage: {'Value': 53.2, 'Text': '53.2V'}
+
+	def __iter__(self):
+		return self
+
+	def __next__(self):
+		try:
+			t, path, typ, value, text = next(self.csvreader)[:5]
+			return PropertiesChangedData(int(t), path, {
+				'Value': demarshall(typ, value),
+				'Text': text
+			})
+		except (EOFError, ValueError):
+			raise StopIteration
+
 class EventStream(object):
 	def __init__(self, *args):
 		self.args = args
@@ -221,16 +264,42 @@ class Timer(object):
 		return True
 
 def open_recording(fn):
-	fp = open(fn, 'rb')
-	unpickler = Unpickler(fp, encoding='UTF-8')
-	try:
-		service = unpickler.load()
-		values = unpickler.load()
-	except EOFError:
-		fp.close()
-		return None
+	if fn.endswith('.csv'):
+		fp = open(fn, 'r', encoding='UTF-8')
+		reader = csvreader(fp, dialect=excel_tab, quotechar="'")
+		try:
+			service = next(reader)[0]
+		except IndexError:
+			fp.close()
+			return None
 
-	return PickleIterator(unpickler, service, values)
+		try:
+			values = {}
+			path, typ, value, text = next(reader)[:4]
+			while path:
+				values[path] = {
+					'Value': demarshall(typ, value),
+					'Text': text
+				}
+				path, typ, value, text = next(reader)[:4]
+		except EOFError:
+			fp.close()
+			return None
+		except ValueError:
+			pass # Not enough values to unpack
+
+		return CsvIterator(reader, service, values)
+	else:
+		fp = open(fn, 'rb')
+		unpickler = Unpickler(fp, encoding='UTF-8')
+		try:
+			service = unpickler.load()
+			values = unpickler.load()
+		except EOFError:
+			fp.close()
+			return None
+
+		return PickleIterator(unpickler, service, values)
 
 def sort_streams(*args):
 	""" args is a list of iterables, The smallest item is yielded each time.
