@@ -255,6 +255,13 @@ class Timer(object):
 					service[servicepath].setProperties(changes)
 				evt = next(self.events)
 		except StopIteration:
+			# Reset to start of simulation state
+			for it in self.events.streams:
+				for path, props in it.values.items():
+					if self.services[it.service][path].GetValue() != props['Value']:
+						self.services[it.service][path].setProperties(props)
+
+			# Restart event stream (changes)
 			self.events.reset()
 			self.tickcount = 0
 			evt = next(self.events)
