@@ -113,6 +113,7 @@ def run(service, filename, duration):
 	bus = dbus.SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in environ else dbus.SystemBus()
 
 	# get named devices on the bus
+	device = None
 	for name in bus.list_names():
 		if name.startswith(service):
 			logger.info("Introspecting: %s" % name)
