@@ -10,25 +10,17 @@ class DbusDevice(object):
 	def __init__(self, bus, name, eventCallback):
 		self._dbus_name = name
 		self._dbus_conn = bus
-		self._items = []
 		self._eventCallback = eventCallback
-		self._getChildren(bus, name)
 		self._service_id = self._dbus_conn.get_name_owner(name)
+		self._dbus_conn.add_signal_receiver(self._on_dbus_value_changed,
+			dbus_interface='com.victronenergy.BusItem', signal_name='PropertiesChanged', path_keyword='path',
+			sender_keyword='service_id')
 
 	def __del__(self):
 		logger.debug('__del__ %s' % self)
 		self._dbus_name = None
 		self._value = None
 		self._eventCallback = None
-
-	def _getChildren(self, bus, service):
-		data = self._dbus_conn.call_blocking(service, '/', None, 'GetValue', '', [])
-		for child in data:
-			name = "/" + child
-			self._items.append(name)
-		self._dbus_conn.add_signal_receiver(self._on_dbus_value_changed,
-			dbus_interface='com.victronenergy.BusItem', signal_name='PropertiesChanged', path_keyword='path',
-			sender_keyword='service_id')
 
 	def _on_dbus_value_changed(self, changes, path=None, service_id=None):
 		if service_id == self._service_id:
@@ -42,11 +34,13 @@ class DbusDevice(object):
 		return self._dbus_name
 	
 	def getValues(self):
+		data = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetValue', '', [])
+		texts = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetText', '', [])
+
 		values = {}
-		for i in self._items:
-			properties = {}
-			properties['Value'] = self._dbus_conn.call_blocking(self._dbus_name, i, None, 'GetValue', '', [])
-			properties['Valid'] = bool(properties['Value'] != dbus.Array([]))
-			properties['Text'] = str(self._dbus_conn.call_blocking(self._dbus_name, i, None, 'GetText', '', []))
-			values[i] = properties
+		for p, v in data.items():
+			values['/' + p] = {
+				'Value': v,
+				'Valid': bool(v != dbus.Array([])),
+				'Text': texts[p]}
 		return values
