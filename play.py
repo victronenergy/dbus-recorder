@@ -80,33 +80,22 @@ class DbusRootObject(dbus.service.Object):
 		return dbus.Dictionary(values, signature=dbus.Signature('sv'),
 			variant_level=1)
 
-	def setProperties(self, properties):
-		values = properties['Value']
-		texts = properties['Text']
-		for k, v in values.items():
-			if not k:
-				continue # safeguard
-			p = '/' + k
-			changes = {'Value': v }
+	def setItems(self, items):
+		# Pass on to DbusPathObject storage
+		for path, changes in items.items():
 			try:
-				changes['Text'] = texts[k]
+				self.values[path]._setProperties(changes)
 			except KeyError:
 				pass
 
-			# Pass on to DbusPathObject
-			try:
-				self.values[p]._setProperties(changes)
-			except KeyError:
-				pass
-
-		# Send PropertiesChanged. Make sure it has the right signature
+		# Send ItemsChanged. Make sure it has the right signature
 		# since python-dbus will guess wrong.
-		self.PropertiesChanged({ k: dbus.types.Dictionary(v, signature='sv')
-			for k, v in properties.items() })
+		self.ItemsChanged({ k: dbus.types.Dictionary(v, signature='sv')
+			for k, v in items.items() })
 
-	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
-	def PropertiesChanged(self, properties):
-		logging.debug('signal PropertiesChanged %s %s' % ('/', properties))
+	@dbus.service.signal(InterfaceBusItem, signature='a{sa{sv}}')
+	def ItemsChanged(self, items):
+		logging.debug('signal ItemsChanged')
 
 class DbusPathObject(dbus.service.Object):
 	## Constructor of MyDbusObject
@@ -232,34 +221,67 @@ class EventStream(object):
 		return self.current
 
 class Timer(object):
-	def __init__(self, services, events):
+	def __init__(self, services, events, nozip):
 		self.services = services
 		self.events = events
+		self.nozip = nozip
 		self.tickcount = 0
 		self.evt = None
 
-	def __call__(self):
+	def current_event(self):
 		if self.events.current is None:
-			evt = next(self.events)
-		else:
-			evt = self.events.current
+			return next(self.events)
+		return self.events.current
 
+	def send_unzipped(self):
+		evt = self.current_event()
+		while evt[0]._time <= self.tickcount:
+			servicename = evt[1]
+			servicepath = evt[0]._dbusObjectPath
+			service = self.services[servicename]
+			if servicepath in service:
+				changes = evt[0]._changes
+				logging.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
+				service[servicepath].setProperties(changes)
+			evt = next(self.events)
+
+	def send_zipped(self):
+		di = defaultdict(dict)
+		evt = self.current_event()
+		while evt[0]._time <= self.tickcount:
+			servicename = evt[1]
+			servicepath = evt[0]._dbusObjectPath
+			service = self.services[servicename]
+			if servicepath in service:
+				di[servicename][servicepath] = evt[0]._changes
+			evt = next(self.events)
+
+		for n, i in di.items():
+			logging.debug('Replaying %s / %s' % (n, i))
+			service = self.services[n]
+			service['/'].setItems(i)
+
+	def __call__(self):
+		evt = self.current_event()
 		try:
-			while evt[0]._time <= self.tickcount:
-				servicename = evt[1]
-				servicepath = evt[0]._dbusObjectPath
-				service = self.services[servicename]
-				if servicepath in service:
-					changes = evt[0]._changes
-					logging.debug('Replaying %s %s %s' % (servicename, servicepath, changes))
-					service[servicepath].setProperties(changes)
-				evt = next(self.events)
+			if self.nozip:
+				self.send_unzipped()
+			else:
+				self.send_zipped()
 		except StopIteration:
 			# Reset to start of simulation state
-			for it in self.events.streams:
-				for path, props in it.values.items():
-					if self.services[it.service][path].GetValue() != props['Value']:
-						self.services[it.service][path].setProperties(props)
+			if self.nozip:
+				for it in self.events.streams:
+					for path, props in it.values.items():
+						if self.services[it.service][path].GetValue() != props['Value']:
+							self.services[it.service][path].setProperties(props)
+			else:
+				di = {}
+				for it in self.events.streams:
+					for path, props in it.values.items():
+						if self.services[it.service][path].GetValue() != props['Value']:
+							di[path] = props
+						self.services[it.service]['/'].setItems(di)
 
 			# Restart event stream (changes)
 			self.events.reset()
@@ -318,6 +340,10 @@ def main():
 	parser = ArgumentParser(description=sys.argv[0])
 	parser.add_argument('--speed',
 		help='Speedup factor', type=int, default=1)
+	parser.add_argument('--nozip',
+		action="store_true",
+		help='Do not zip multiple PropertiesChanged into a single ItemsChanged',
+		default=False)
 	parser.add_argument('datafiles', nargs='+', help='Path to data file')
 
 	args = parser.parse_args()
@@ -341,7 +367,7 @@ def main():
 		services[it.service]['/'] = DbusRootObject(busName, services[it.service])
 
 	logging.info("Stage set, starting simulation")
-	GLib.timeout_add(int(1000.0/args.speed), Timer(services, events))
+	GLib.timeout_add(int(1000.0/args.speed), Timer(services, events, args.nozip))
 	GLib.MainLoop().run()
 			
 if __name__ == "__main__":
