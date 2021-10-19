@@ -37,23 +37,14 @@ def typeof(v):
             return "ARRAY"
     if isinstance(v, dbus.types.String):
         return "STRING"
-    if isinstance(v, dbus.types.Dictionary):
-        return "DICT"
     return "UNKNOWN"
 
 def fmt(v):
     if isinstance(v, dbus.types.Array):
         return json.dumps([fmt(x) for x in v])
-    if isinstance(v, dbus.types.Dictionary):
-        return json.dumps({str(k): (typeof(x), fmt(x)) for k, x in v.items()})
     if isinstance(v, dbus.types.Byte):
         return int(v)
     return str(v)
-
-def fmt_text(t):
-    if isinstance(t, dbus.types.Dictionary):
-        return json.dumps({str(k): str(v) for k, v in t.items()})
-    return t
 
 writer = csvwriter(sys.stdout, dialect=excel_tab, quotechar="'")
 with open(sys.argv[1], 'rb') as fp:
@@ -72,7 +63,7 @@ with open(sys.argv[1], 'rb') as fp:
             change = unpickler.load()
             value = change._changes['Value']
 
-            writer.writerow([change._time, change._dbusObjectPath, typeof(value), fmt(value), fmt_text(change._changes['Text'])])
+            writer.writerow([change._time, change._dbusObjectPath, typeof(value), fmt(value), change._changes['Text']])
 
         except EOFError:
             break
