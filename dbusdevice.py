@@ -15,6 +15,9 @@ class DbusDevice(object):
 		self._dbus_conn.add_signal_receiver(self._on_dbus_value_changed,
 			dbus_interface='com.victronenergy.BusItem', signal_name='PropertiesChanged', path_keyword='path',
 			sender_keyword='service_id')
+		self._dbus_conn.add_signal_receiver(self._on_dbus_items_changed,
+			dbus_interface='com.victronenergy.BusItem',
+			signal_name='ItemsChanged', path='/', sender_keyword='service_id')
 
 	def __del__(self):
 		logger.debug('__del__ %s' % self)
@@ -25,6 +28,11 @@ class DbusDevice(object):
 	def _on_dbus_value_changed(self, changes, path=None, service_id=None):
 		if service_id == self._service_id:
 			self._eventCallback(self._dbus_name, path, changes)
+
+	def _on_dbus_items_changed(self, items, service_id=None):
+		if service_id == self._service_id:
+			for path, changes in items.items():
+				self._eventCallback(self._dbus_name, path, changes)
 
 	## Returns the dbus-service-name which represents the Victron-device.
 	def __str__(self):
