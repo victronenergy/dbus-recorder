@@ -1,4 +1,4 @@
-com.victronenergy.battery.ttyO0
+com.victronenergy.battery.ttyO2
 /Alarms/HighTemperature	UINT32	0	0
 /History/MaximumVoltage	DOUBLE	51.95000076293945	51.95V
 /History/AutomaticSyncs	UINT32	1	1

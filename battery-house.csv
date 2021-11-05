@@ -1,94 +1,64 @@
-com.victronenergy.battery.ttyO2
+com.victronenergy.battery.ttyO0
+/Alarms/Alarm	ARRAY	[]	
+/Alarms/HighStarterVoltage	UINT32	0	0
 /Alarms/HighTemperature	UINT32	0	0
-/History/MaximumVoltage	DOUBLE	54.220001220703125	54.22V
+/Alarms/HighVoltage	UINT32	0	0
+/Alarms/LowSoc	UINT32	0	0
+/Alarms/LowStarterVoltage	UINT32	0	0
+/Alarms/LowTemperature	UINT32	0	0
+/Alarms/LowVoltage	UINT32	0	0
+/Alarms/MidVoltage	UINT32	0	0
+/Connected	UINT32	1	1
+/ConsumedAmphours	DOUBLE	-49.0	-49.0Ah
+/CustomName	STRING	House battery	House battery
+/Dc/0/Current	DOUBLE	9.5999984741211	9.6A
+/Dc/0/MidVoltage	ARRAY	[]	
+/Dc/0/MidVoltageDeviation	ARRAY	[]	
+/Dc/0/Power	DOUBLE	423.906005859375	424W
+/Dc/0/Temperature	ARRAY	[]	
+/Dc/0/Voltage	DOUBLE	51.40999984741211	51.41V
+/Dc/1/Voltage	ARRAY	[]	
+/DeviceInstance	UINT32	256	256
+/FirmwareVersion	UINT32	776	v3.08
+/HardwareVersion	ARRAY	[]	
 /History/AutomaticSyncs	UINT32	1	1
 /History/AverageDischarge	DOUBLE	0.0	0.0Ah
-/History/HighVoltageAlarms	UINT32	39	39
-/HardwareVersion	ARRAY	[]	
-/History/TotalAhDrawn	DOUBLE	-583.0999755859375	-583.1Ah
-/History/DeepestDischarge	DOUBLE	-373.3999938964844	-373.4Ah
-/Mgmt/ProcessVersion	STRING	3.21	3.21
-/Alarms/Alarm	ARRAY	[]	
-/Alarms/MidVoltage	UINT32	0	0
-/Alarms/HighVoltage	UINT32	0	0
 /History/ChargeCycles	UINT32	1	1
-/Alarms/LowTemperature	UINT32	0	0
-/Alarms/HighStarterVoltage	UINT32	0	0
-/DeviceInstance	UINT32	256	256
-/History/LowStarterVoltageAlarms	ARRAY	[]	
-/Alarms/LowStarterVoltage	UINT32	0	0
-/History/MinimumStarterVoltage	ARRAY	[]	
-/Mgmt/Connection	STRING	VE.Direct	VE.Direct
-/TimeToGo	DOUBLE	3479.999755859375	3480s
-/Connected	UINT32	1	1
-/Settings/HasTemperature	UINT32	0	0
-/Alarms/LowVoltage	UINT32	0	0
-/Relay/0/State	UINT32	1	1
-/Soc	DOUBLE	58.20000076293945	58.2%
-/Dc/0/Temperature	ARRAY	[]	
-/History/MaximumStarterVoltage	ARRAY	[]	
-/Dc/0/Voltage	DOUBLE	51.40999984741211	51.41V
-/Settings/HasMidVoltage	UINT32	0	0
-/Dc/0/MidVoltageDeviation	ARRAY	[]	
-/CustomName	STRING	House battery	House battery
-/FirmwareVersion	UINT32	776	v3.08
-/Dc/1/Voltage	ARRAY	[]	
-/History/TimeSinceLastFullCharge	UINT32	2192	2192s
-/Dc/0/Current	DOUBLE	-66.5999984741211	-66.6A
-/History/LastDischarge	DOUBLE	-49.0	-49.0Ah
-/History/LowVoltageAlarms	UINT32	0	0
-/History/MinimumVoltage	DOUBLE	5.96999979019165	5.97V
-/ConsumedAmphours	DOUBLE	-49.0	-49.0Ah
-/History/HighStarterVoltageAlarms	ARRAY	[]	
-/History/DischargedEnergy	DOUBLE	9.069999694824219	9.07kWh
-/Dc/0/Power	DOUBLE	-3423.906005859375	-3424W
-/Settings/HasStarterVoltage	UINT32	0	0
 /History/ChargedEnergy	DOUBLE	11.220000267028809	11.22kWh
+/History/DeepestDischarge	DOUBLE	-373.3999938964844	-373.4Ah
+/History/DischargedEnergy	DOUBLE	9.069999694824219	9.07kWh
 /History/FullDischarges	INT32	1	1
-/Serial	STRING	HQ1548R36DZ	HQ1548R36DZ
-/Alarms/LowSoc	UINT32	0	0
+/History/HighStarterVoltageAlarms	ARRAY	[]	
+/History/HighVoltageAlarms	UINT32	39	39
+/History/LastDischarge	DOUBLE	-49.0	-49.0Ah
+/History/LowStarterVoltageAlarms	ARRAY	[]	
+/History/LowVoltageAlarms	UINT32	0	0
+/History/MaximumStarterVoltage	ARRAY	[]	
+/History/MaximumVoltage	DOUBLE	54.220001220703125	54.22V
+/History/MinimumStarterVoltage	ARRAY	[]	
+/History/MinimumVoltage	DOUBLE	5.96999979019165	5.97V
+/History/TimeSinceLastFullCharge	UINT32	2192	2192s
+/History/TotalAhDrawn	DOUBLE	-583.0999755859375	-583.1Ah
+/Mgmt/Connection	STRING	VE.Direct	VE.Direct
 /Mgmt/ProcessName	STRING	vedirect-dbus	vedirect-dbus
-/Dc/0/MidVoltage	ARRAY	[]	
+/Mgmt/ProcessVersion	STRING	3.21	3.21
 /ProductId	UINT32	41865	0xa389
 /ProductName	STRING	SmartShunt 500A/50mV	SmartShunt 500A/50mV
+/Relay/0/State	UINT32	1	1
+/Serial	STRING	HQ1548R36DZ	HQ1548R36DZ
+/Settings/HasMidVoltage	UINT32	0	0
+/Settings/HasStarterVoltage	UINT32	0	0
+/Settings/HasTemperature	UINT32	0	0
+/Soc	DOUBLE	58.20000076293945	58.2%
+/TimeToGo	DOUBLE	3479.999755859375	3480s
 
-1	/History/TotalAhDrawn	DOUBLE	-583.0999755859375	-583.1Ah
-1	/History/TimeSinceLastFullCharge	UINT32	2192	2192s
-1	/ConsumedAmphours	DOUBLE	-49.099998474121094	-49.1Ah
-1	/History/TimeSinceLastFullCharge	UINT32	2193	2193s
-2	/History/TimeSinceLastFullCharge	UINT32	2194	2194s
-3	/History/TimeSinceLastFullCharge	UINT32	2195	2195s
-4	/Dc/0/Power	DOUBLE	-3429.047119140625	-3429W
-4	/Dc/0/Current	DOUBLE	-66.69999694824219	-66.7A
-4	/History/DischargedEnergy	DOUBLE	9.079999923706055	9.08kWh
-4	/History/LastDischarge	DOUBLE	-49.099998474121094	-49.1Ah
-4	/History/TimeSinceLastFullCharge	UINT32	2196	2196s
-5	/History/TotalAhDrawn	DOUBLE	-583.2000122070312	-583.2Ah
-5	/History/TimeSinceLastFullCharge	UINT32	2197	2197s
-6	/History/TimeSinceLastFullCharge	UINT32	2198	2198s
-7	/ConsumedAmphours	DOUBLE	-49.20000076293945	-49.2Ah
-7	/Soc	DOUBLE	58.099998474121094	58.1%
-7	/History/TimeSinceLastFullCharge	UINT32	2199	2199s
-8	/Dc/0/Power	DOUBLE	-3423.906005859375	-3424W
-8	/Dc/0/Current	DOUBLE	-66.5999984741211	-66.6A
-8	/TimeToGo	DOUBLE	3539.999755859375	3540s
-8	/History/TimeSinceLastFullCharge	UINT32	2200	2200s
-9	/Dc/0/Power	DOUBLE	-3429.047119140625	-3429W
-9	/Dc/0/Current	DOUBLE	-66.69999694824219	-66.7A
-9	/History/LastDischarge	DOUBLE	-49.20000076293945	-49.2Ah
-9	/History/TimeSinceLastFullCharge	UINT32	2201	2201s
-10	/History/TimeSinceLastFullCharge	UINT32	2202	2202s
-11	/History/TotalAhDrawn	DOUBLE	-583.2999877929688	-583.3Ah
-11	/History/TimeSinceLastFullCharge	UINT32	2203	2203s
-12	/ConsumedAmphours	DOUBLE	-49.29999923706055	-49.3Ah
-12	/History/TimeSinceLastFullCharge	UINT32	2204	2204s
-13	/Dc/0/Power	DOUBLE	-3423.906005859375	-3424W
-13	/Dc/0/Current	DOUBLE	-66.5999984741211	-66.6A
-13	/History/TimeSinceLastFullCharge	UINT32	2205	2205s
-14	/Soc	DOUBLE	58.0	58.0%
-14	/History/DischargedEnergy	DOUBLE	9.09000015258789	9.09kWh
-14	/History/TimeSinceLastFullCharge	UINT32	2206	2206s
-15	/History/LastDischarge	DOUBLE	-49.29999923706055	-49.3Ah
-15	/History/TimeSinceLastFullCharge	UINT32	2207	2207s
-16	/Dc/0/Power	DOUBLE	-3429.047119140625	-3429W
-16	/Dc/0/Current	DOUBLE	-66.69999694824219	-66.7A
+15	/Dc/0/Power	DOUBLE	429.047119140625	429W
+15	/Dc/0/Current	DOUBLE	9.69999694824219	9.7A
+30	/Dc/0/Power	DOUBLE	423.906005859375	424W
+30	/Dc/0/Current	DOUBLE	9.5999984741211	9.6A
+45	/Dc/0/Power	DOUBLE	429.047119140625	429W
+45	/Dc/0/Current	DOUBLE	9.69999694824219	9.7A
+60	/Dc/0/Power	DOUBLE	423.906005859375	424W
+60	/Dc/0/Current	DOUBLE	9.5999984741211	9.6A
+75	/Dc/0/Power	DOUBLE	429.047119140625	429W
+75	/Dc/0/Current	DOUBLE	9.69999694824219	9.7A
