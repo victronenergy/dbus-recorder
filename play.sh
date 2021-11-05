@@ -13,17 +13,17 @@ pgrep -f play.py | xargs -r kill
 case "$1" in
     "2")
         # Boat/Motorhome demo 1
-        start solarcharger.dat vebus.dat battery-house.dat \
-			battery-hydraulic.dat tank_fwater.dat tank_fuel.dat \
-			tank_oil.dat tank_bwater.dat
+        start solarcharger.csv vebus.csv battery-house.csv \
+			battery-hydraulic.csv tank_fwater.csv tank_fuel.csv \
+			tank_oil.csv tank_bwater.csv
         ;;
     "3")
         # Boat/Motorhome demo 2
-        start solarcharger.dat vebus-marine.dat battery-marine.dat \
-			tank_fwater.dat tank_fuel.dat tank_oil.dat tank_bwater.dat
+        start solarcharger.csv vebus-marine.csv battery-marine.csv \
+			tank_fwater.csv tank_fuel.csv tank_oil.csv tank_bwater.csv
         ;;
     *)
         # ESS demo
-        start grid.dat pvinverter.dat solarcharger.dat vebus.dat battery.dat
+        start grid.csv pvinverter.csv solarcharger.csv vebus.csv battery.csv
         ;;
 esac

@@ -1,0 +1,387 @@
+com.victronenergy.vebus.ttyO1
+/Alarms/HighTemperature	UINT32	0	ok
+/AcSensor/4/Voltage	ARRAY	[]	
+/Ac/In/1/CurrentLimit	DOUBLE	50.0	50.0A
+/Alarms/VoltageSensor	UINT32	0	0
+/AcSensor/0/Phase	ARRAY	[]	
+/AcSensor/8/Power	ARRAY	[]	
+/Energy/AcIn1ToInverter	DOUBLE	0.0	0.00kWh
+/Interfaces/Mk2/ProductId	UINT32	4464	4464
+/Energy/InverterToAcOut	DOUBLE	0.0	0.00kWh
+/Alarms/L1/HighTemperature	UINT32	0	ok
+/AcSensor/1/Energy	ARRAY	[]	
+/AcSensor/0/Power	ARRAY	[]	
+/Ac/ActiveIn/ActiveInput	UINT32	240	240
+/Alarms/L1/Ripple	UINT32	0	ok
+/Devices/Bms/Version	ARRAY	[]	
+/DeviceInstance	UINT16	257	257
+/Mgmt/Connection	STRING	VE.Bus	VE.Bus
+/AcSensor/0/Voltage	ARRAY	[]	
+/Ac/ActiveIn/L2/P	ARRAY	[]	
+/FirmwareVersion	UINT32	1058	422
+/Energy/AcOutToAcIn1	DOUBLE	0.0	0.00kWh
+/Energy/AcIn2ToInverter	DOUBLE	0.0	0.00kWh
+/AcSensor/6/Phase	ARRAY	[]	
+/AcSensor/6/Energy	ARRAY	[]	
+/Ac/PowerMeasurementType	UINT32	4	4
+/AcSensor/2/Current	ARRAY	[]	
+/AcSensor/4/Location	ARRAY	[]	
+/Leds/Bulk	BYTE	0	off
+/AcSensor/1/Current	ARRAY	[]	
+/Ac/ActiveIn/CurrentLimit	DOUBLE	16.0	16.0A
+/Ac/ActiveIn/L2/V	ARRAY	[]	
+/VebusSubstate	UINT32	0	init
+/AcSensor/8/Phase	ARRAY	[]	
+/Alarms/L3/Ripple	UINT32	0	ok
+/AcSensor/5/Voltage	ARRAY	[]	
+/Ac/ActiveIn/S	INT32	0	0VA
+/BatterySense/Voltage	ARRAY	[]	
+/Ac/ActiveIn/L1/P	INT32	0	0W
+/AcSensor/8/Voltage	ARRAY	[]	
+/Leds/Absorption	BYTE	0	off
+/Leds/Overload	BYTE	0	off
+/Ac/ActiveIn/L1/S	INT32	0	0VA
+/Interfaces/Mk2/ProductName	STRING	MK3	MK3
+/AcSensor/5/Power	ARRAY	[]	
+/AcSensor/1/Voltage	ARRAY	[]	
+/Leds/Temperature	BYTE	0	off
+/FirmwareFeatures/BolFrame	BYTE	1	1
+/AcSensor/6/Power	ARRAY	[]	
+/Alarms/L3/Overload	UINT32	0	ok
+/AcSensor/1/Location	ARRAY	[]	
+/Mgmt/ProcessVersion	STRING	2.70	2.70
+/Leds/Float	BYTE	0	off
+/Energy/OutToInverter	DOUBLE	0.0	0.00kWh
+/AcSensor/7/Current	ARRAY	[]	
+/BatteryOperationalLimits/MaxDischargeCurrent	ARRAY	[]	
+/FirmwareFeatures/IBatSOCBroadcast	BYTE	1	1
+/Alarms/LowBattery	UINT32	0	ok
+/Connected	BYTE	1	1
+/Devices/0/Assistants	ARRAY[BYTE]	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]	None
+/AcSensor/2/Energy	ARRAY	[]	
+/ExtraBatteryCurrent	DOUBLE	0.0	0.0A
+/Dc/0/Voltage	DOUBLE	55.5099983215332	55.51V
+/Ac/ActiveIn/P	INT32	0	0W
+/AcSensor/1/Power	ARRAY	[]	
+/AcSensor/5/Phase	ARRAY	[]	
+/Ac/ActiveIn/CurrentLimitIsAdjustable	UINT32	1	1
+/Ac/ActiveIn/Connected	UINT32	0	no
+/BatteryOperationalLimits/BatteryLowVoltage	ARRAY	[]	
+/Leds/Mains	BYTE	0	off
+/Dc/0/Current	DOUBLE	-4.300000190734863	-4.3A
+/ModeIsAdjustable	UINT32	1	1
+/AcSensor/2/Power	ARRAY	[]	
+/ProductId	UINT32	9816	2658
+/BatteryOperationalLimits/MaxChargeVoltage	ARRAY	[]	
+/AcSensor/7/Energy	ARRAY	[]	
+/Leds/LowBattery	BYTE	0	off
+/Alarms/L2/LowBattery	UINT32	0	ok
+/AcSensor/7/Power	ARRAY	[]	
+/AcSensor/7/Voltage	ARRAY	[]	
+/State	UINT32	9	inverting
+/Devices/NumberOfMultis	INT32	1	1
+/AcSensor/4/Power	ARRAY	[]	
+/Interfaces/Mk2/Tunnel	ARRAY	[]	
+/AcSensor/3/Phase	ARRAY	[]	
+/ShortIds	UINT32	1	1
+/VebusMainState	UINT32	4	invert
+/AcSensor/4/Phase	ARRAY	[]	
+/Ac/NumberOfAcInputs	INT32	2	2
+/AcSensor/6/Voltage	ARRAY	[]	
+/Dc/0/MaxChargeCurrent	DOUBLE	52.0	52.0A
+/AcSensor/5/Location	ARRAY	[]	
+/FirmwareFeatures/CommandWriteViaId	BYTE	1	1
+/Alarms/L2/HighTemperature	UINT32	0	ok
+/Energy/AcIn2ToAcOut	DOUBLE	0.0	0.00kWh
+/AcSensor/6/Current	ARRAY	[]	
+/AcSensor/3/Power	ARRAY	[]	
+/AcSensor/4/Current	ARRAY	[]	
+/AcSensor/8/Energy	ARRAY	[]	
+/Ac/Out/L1/I	DOUBLE	0.8999999761581421	0.9A
+/AcSensor/3/Current	ARRAY	[]	
+/AcSensor/2/Phase	ARRAY	[]	
+/Ac/ActiveIn/L3/F	ARRAY	[]	
+/Ac/ActiveIn/L2/I	ARRAY	[]	
+/Ac/ActiveIn/L2/F	ARRAY	[]	
+/Ac/Out/L2/S	ARRAY	[]	
+/Alarms/L2/Overload	UINT32	0	ok
+/BatterySense/Temperature	ARRAY	[]	
+/Ac/ActiveIn/L3/I	ARRAY	[]	
+/AcSensor/8/Current	ARRAY	[]	
+/Alarms/L3/HighTemperature	UINT32	0	ok
+/Ac/ActiveIn/L3/S	ARRAY	[]	
+/Ac/ActiveIn/L3/P	ARRAY	[]	
+/AcSensor/6/Location	ARRAY	[]	
+/AcSensor/7/Phase	ARRAY	[]	
+/Ac/In/2/CurrentLimitIsAdjustable	UINT32	1	1
+/Ac/ActiveIn/L2/S	ARRAY	[]	
+/AcSensor/Count	ARRAY	[]	
+/FirmwareFeatures/NewPanelFrame	BYTE	1	1
+/AcSensor/1/Phase	ARRAY	[]	
+/Dc/0/Power	INT32	-206	-206W
+/Alarms/L1/Overload	UINT32	0	ok
+/BatteryOperationalLimits/MaxChargeCurrent	ARRAY	[]	
+/Ac/Out/L2/I	ARRAY	[]	
+/Mgmt/ProcessName	STRING	mk2-dbus	mk2-dbus
+/Ac/ActiveIn/L1/V	DOUBLE	0.0	0V
+/Ac/ActiveIn/L1/I	DOUBLE	0.0	0.0A
+/Energy/AcIn1ToAcOut	DOUBLE	0.0	0.00kWh
+/AcSensor/0/Energy	ARRAY	[]	
+/SystemReset	ARRAY	[]	
+/Ac/ActiveIn/L1/F	DOUBLE	0.0	0.0Hz
+/Ac/Out/L3/F	ARRAY	[]	
+/VebusSetChargeState	UINT32	0	0
+/AcSensor/5/Current	ARRAY	[]	
+/Energy/InverterToAcIn1	DOUBLE	0.0	0.00kWh
+/Energy/InverterToAcIn2	DOUBLE	0.0	0.00kWh
+/AcSensor/0/Current	ARRAY	[]	
+/Interfaces/Mk2/Version	UINT32	1170204	1170204
+/Leds/Inverter	BYTE	1	on
+/Mode	UINT32	3	on
+/Alarms/Ripple	UINT32	0	ok
+/Alarms/L1/LowBattery	UINT32	0	ok
+/Ac/In/2/CurrentLimit	DOUBLE	16.0	16.0A
+/Alarms/L2/Ripple	UINT32	0	ok
+/AcSensor/5/Energy	ARRAY	[]	
+/AcSensor/3/Voltage	ARRAY	[]	
+/Soc	DOUBLE	95.0	95.0%
+/FirmwareFeatures/BolUBatAndTBatSense	BYTE	1	1
+/Ac/Out/S	INT32	207	207VA
+/Ac/Out/P	INT32	206	206W
+/Ac/In/1/CurrentLimitIsAdjustable	UINT32	0	0
+/Alarms/TemperatureSensor	UINT32	0	0
+/Ac/NumberOfPhases	UINT32	1	1
+/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+/VebusError	BYTE	0	0
+/AcSensor/3/Energy	ARRAY	[]	
+/Devices/Dmc/Version	ARRAY	[]	
+/AcSensor/2/Voltage	ARRAY	[]	
+/Quirks	UINT16	0	0
+/AcSensor/3/Location	ARRAY	[]	
+/Ac/ActiveIn/L3/V	ARRAY	[]	
+/Ac/Out/L1/P	INT32	206	206W
+/Ac/Out/L1/S	INT32	206	206VA
+/Energy/AcOutToAcIn2	DOUBLE	0.0	0.00kWh
+/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+/Ac/Out/L2/F	ARRAY	[]	
+/AcSensor/0/Location	ARRAY	[]	
+/AcSensor/7/Location	ARRAY	[]	
+/AcSensor/2/Location	ARRAY	[]	
+/AcSensor/8/Location	ARRAY	[]	
+/Ac/Out/L3/I	ARRAY	[]	
+/FirmwareFeatures/SetChargeState	BYTE	1	1
+/Ac/Out/L3/V	ARRAY	[]	
+/Alarms/Overload	UINT32	0	ok
+/Ac/Out/L3/S	ARRAY	[]	
+/AcSensor/4/Energy	ARRAY	[]	
+/Devices/0/Version	UINT32	2658422	2658422
+/Ac/Out/L3/P	ARRAY	[]	
+/Ac/Out/L2/V	ARRAY	[]	
+/ProductName	STRING	Quattro 48/5000/70-2x100	Quattro 48/5000/70-2x100
+/Alarms/L3/LowBattery	UINT32	0	ok
+/RedetectSystem	UINT32	0	
+/Ac/Out/L2/P	ARRAY	[]	
+
+0	/Dc/0/Voltage	DOUBLE	55.349998474121094	55.35V
+0	/Ac/ActiveIn/L1/V	DOUBLE	234.24000549316406	234V
+0	/Ac/Out/P	INT32	207	207W
+0	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+0	/Ac/Out/L1/P	INT32	207	207W
+0	/Ac/Out/L1/F	DOUBLE	49.025001525878906	49.0Hz
+2	/Dc/0/Voltage	DOUBLE	55.34000015258789	55.34V
+2	/Dc/0/Power	INT32	-207	-207W
+2	/Ac/Out/P	INT32	206	206W
+2	/Ac/Out/L1/P	INT32	206	206W
+2	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+4	/Dc/0/Power	INT32	-206	-206W
+4	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+6	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+8	/Ac/Out/L1/F	DOUBLE	50.15345001220703	50.2Hz
+10	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+12	/Ac/Out/P	INT32	207	207W
+12	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+12	/Ac/Out/L1/P	INT32	207	207W
+12	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+13	/Dc/0/Voltage	DOUBLE	55.33000183105469	55.33V
+14	/Dc/0/Power	INT32	-207	-207W
+14	/Ac/ActiveIn/L1/V	DOUBLE	233.41000366210938	233V
+14	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+15	/Leds/Mains	BYTE	1	on
+15	/Leds/Absorption	BYTE	1	on
+15	/Leds/Inverter	BYTE	0	off
+15	/VebusMainState	UINT32	9	charge
+15	/VebusSubstate	UINT32	2	absorption
+15	/State	UINT32	4	absorption
+15	/Dc/0/Voltage	DOUBLE	59.93000030517578	59.93V
+16	/Dc/0/Current	DOUBLE	10.300000011920929	10.3A
+16	/Ac/ActiveIn/Connected	UINT32	1	yes
+16	/Ac/ActiveIn/ActiveInput	UINT32	1	1
+16	/Ac/ActiveIn/P	INT32	794	794W
+16	/Ac/ActiveIn/L1/I	DOUBLE	3.6300000190734862	3.63A
+16	/Ac/ActiveIn/L1/P	INT32	794	794W
+16	/Ac/Out/P	INT32	223	223W
+16	/Ac/Out/L1/V	DOUBLE	233.41000366210938	233V
+16	/Ac/Out/L1/I	DOUBLE	0.8299999833106995	0.8A
+16	/Ac/Out/L1/P	INT32	223	223W
+17	/Dc/0/Voltage	DOUBLE	56.779998779296875	56.78V
+17	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+19	/Dc/0/Voltage	DOUBLE	56.790000915527344	56.79V
+19	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+21	/Dc/0/Voltage	DOUBLE	56.779998779296875	56.78V
+23	/Dc/0/Voltage	DOUBLE	56.790000915527344	56.79V
+23	/Ac/ActiveIn/P	INT32	813	813W
+23	/Ac/ActiveIn/L1/P	INT32	813	813W
+23	/Ac/Out/P	INT32	231	231W
+23	/Ac/Out/L1/P	INT32	231	231W
+23	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+25	/Ac/ActiveIn/P	INT32	812	812W
+25	/Ac/ActiveIn/L1/P	INT32	812	812W
+25	/Ac/Out/P	INT32	230	230W
+25	/Ac/Out/L1/P	INT32	230	230W
+27	/Dc/0/Current	DOUBLE	10.100000001490116	10.1A
+27	/Ac/ActiveIn/P	INT32	813	813W
+27	/Ac/ActiveIn/L1/P	INT32	813	813W
+27	/Ac/Out/P	INT32	231	231W
+27	/Ac/Out/L1/I	DOUBLE	0.8500000238418579	0.9A
+27	/Ac/Out/L1/P	INT32	231	231W
+29	/Dc/0/Current	DOUBLE	10.0	10.0A
+29	/Ac/Out/L1/I	DOUBLE	0.8600000143051147	0.9A
+30	/Dc/0/Voltage	DOUBLE	56.75	56.75V
+31	/Ac/ActiveIn/P	INT32	812	812W
+31	/Ac/ActiveIn/L1/P	INT32	812	812W
+31	/Ac/Out/P	INT32	230	230W
+31	/Ac/Out/L1/P	INT32	230	230W
+31	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+32	/Leds/Mains	BYTE	0	off
+32	/Leds/Absorption	BYTE	0	off
+32	/Leds/Inverter	BYTE	1	on
+32	/VebusMainState	UINT32	4	invert
+32	/VebusSubstate	UINT32	0	init
+32	/State	UINT32	9	inverting
+32	/Dc/0/Voltage	DOUBLE	55.33000183105469	55.33V
+32	/Dc/0/Current	DOUBLE	-4.300000190734863	-4.3A
+33	/Ac/ActiveIn/Connected	UINT32	0	no
+33	/Ac/ActiveIn/ActiveInput	UINT32	240	240
+33	/Ac/ActiveIn/P	INT32	16	16W
+33	/Ac/ActiveIn/L1/V	DOUBLE	0.0	0V
+33	/Ac/ActiveIn/L1/I	DOUBLE	0.0	0.0A
+33	/Ac/ActiveIn/L1/P	INT32	16	16W
+33	/Ac/ActiveIn/L1/F	DOUBLE	0.0	0.0Hz
+33	/Ac/Out/P	INT32	208	208W
+33	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+33	/Ac/Out/L1/I	DOUBLE	0.8999999761581421	0.9A
+33	/Ac/Out/L1/P	INT32	208	208W
+33	/Ac/Out/L1/F	DOUBLE	49.64556884765625	49.6Hz
+34	/Dc/0/Voltage	DOUBLE	55.31999969482422	55.32V
+34	/Dc/0/Power	INT32	-206	-206W
+34	/Ac/ActiveIn/L1/V	DOUBLE	235.89999389648438	236V
+36	/Dc/0/Voltage	DOUBLE	55.310001373291016	55.31V
+36	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+38	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+40	/Dc/0/Voltage	DOUBLE	55.31999969482422	55.32V
+40	/Ac/Out/L1/V	DOUBLE	229.6199951171875	230V
+42	/Ac/ActiveIn/L1/V	DOUBLE	235.07000732421875	235V
+42	/Ac/Out/P	INT32	207	207W
+42	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+42	/Ac/Out/L1/P	INT32	207	207W
+43	/Dc/0/Voltage	DOUBLE	55.310001373291016	55.31V
+43	/Dc/0/Power	INT32	-207	-207W
+43	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+45	/Ac/Out/P	INT32	206	206W
+45	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+45	/Ac/Out/L1/P	INT32	206	206W
+46	/Leds/Mains	BYTE	1	on
+46	/Leds/Absorption	BYTE	1	on
+46	/Leds/Inverter	BYTE	0	off
+46	/VebusMainState	UINT32	9	charge
+46	/VebusSubstate	UINT32	2	absorption
+47	/State	UINT32	4	absorption
+47	/Dc/0/Voltage	DOUBLE	59.869998931884766	59.87V
+47	/Dc/0/Current	DOUBLE	10.300000011920929	10.3A
+47	/Dc/0/Power	INT32	-206	-206W
+47	/Ac/ActiveIn/Connected	UINT32	1	yes
+47	/Ac/ActiveIn/ActiveInput	UINT32	0	0
+47	/Ac/ActiveIn/P	INT32	796	796W
+47	/Ac/ActiveIn/L1/I	DOUBLE	3.6300000190734862	3.63A
+47	/Ac/ActiveIn/L1/P	INT32	796	796W
+47	/Ac/Out/P	INT32	225	225W
+47	/Ac/Out/L1/V	DOUBLE	235.07000732421875	235V
+47	/Ac/Out/L1/I	DOUBLE	0.8500000238418579	0.9A
+47	/Ac/Out/L1/P	INT32	225	225W
+47	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+48	/Dc/0/Voltage	DOUBLE	56.790000915527344	56.79V
+49	/Ac/Out/P	INT32	228	228W
+49	/Ac/Out/L1/P	INT32	228	228W
+49	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+50	/Dc/0/Voltage	DOUBLE	56.84000015258789	56.84V
+50	/Dc/0/Power	INT32	585	585W
+51	/Ac/ActiveIn/P	INT32	814	814W
+51	/Ac/ActiveIn/L1/P	INT32	814	814W
+51	/Ac/Out/P	INT32	230	230W
+51	/Ac/Out/L1/P	INT32	230	230W
+52	/Dc/0/Voltage	DOUBLE	56.849998474121094	56.85V
+52	/Dc/0/Power	INT32	584	584W
+52	/Ac/ActiveIn/P	INT32	813	813W
+53	/Ac/ActiveIn/L1/P	INT32	813	813W
+53	/Ac/Out/P	INT32	228	228W
+53	/Ac/Out/L1/I	DOUBLE	0.8299999833106995	0.8A
+53	/Ac/Out/L1/P	INT32	228	228W
+53	/Ac/Out/L1/F	DOUBLE	49.89822006225586	49.9Hz
+54	/Dc/0/Power	INT32	585	585W
+54	/Ac/ActiveIn/L1/V	DOUBLE	235.89999389648438	236V
+54	/Ac/Out/P	INT32	229	229W
+54	/Ac/Out/L1/V	DOUBLE	235.89999389648438	236V
+54	/Ac/Out/L1/I	DOUBLE	0.8500000238418579	0.9A
+54	/Ac/Out/L1/P	INT32	229	229W
+54	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+56	/Dc/0/Voltage	DOUBLE	56.790000915527344	56.79V
+56	/Dc/0/Power	INT32	584	584W
+56	/Ac/ActiveIn/P	INT32	814	814W
+56	/Ac/ActiveIn/L1/V	DOUBLE	235.07000732421875	235V
+56	/Ac/ActiveIn/L1/P	INT32	814	814W
+56	/Ac/Out/L1/V	DOUBLE	235.07000732421875	235V
+56	/Ac/Out/L1/F	DOUBLE	50.15345001220703	50.2Hz
+58	/Leds/Mains	BYTE	0	off
+58	/Leds/Absorption	BYTE	0	off
+58	/Leds/Inverter	BYTE	1	on
+58	/VebusMainState	UINT32	4	invert
+58	/VebusSubstate	UINT32	0	init
+58	/State	UINT32	9	inverting
+58	/Dc/0/Voltage	DOUBLE	55.310001373291016	55.31V
+58	/Dc/0/Current	DOUBLE	-4.300000190734863	-4.3A
+58	/Dc/0/Power	INT32	585	585W
+58	/Ac/ActiveIn/Connected	UINT32	0	no
+58	/Ac/ActiveIn/ActiveInput	UINT32	240	240
+58	/Ac/ActiveIn/P	INT32	2	2W
+58	/Ac/ActiveIn/L1/V	DOUBLE	0.0	0V
+58	/Ac/ActiveIn/L1/I	DOUBLE	0.0	0.0A
+58	/Ac/ActiveIn/L1/P	INT32	2	2W
+58	/Ac/ActiveIn/L1/F	DOUBLE	0.0	0.0Hz
+58	/Ac/Out/P	INT32	207	207W
+59	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+59	/Ac/Out/L1/I	DOUBLE	0.8999999761581421	0.9A
+59	/Ac/Out/L1/P	INT32	207	207W
+59	/Ac/Out/L1/F	DOUBLE	50.67183303833008	50.7Hz
+60	/Dc/0/Power	INT32	-205	-205W
+60	/Ac/ActiveIn/P	INT32	0	0W
+60	/Ac/ActiveIn/L1/P	INT32	0	0W
+60	/Ac/Out/P	INT32	206	206W
+60	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+60	/Ac/Out/L1/P	INT32	206	206W
+60	/Ac/Out/L1/F	DOUBLE	50.0255126953125	50.0Hz
+62	/Dc/0/Power	INT32	-206	-206W
+62	/Ac/Out/L1/V	DOUBLE	229.6199951171875	230V
+64	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+68	/Ac/Out/P	INT32	207	207W
+68	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+68	/Ac/Out/L1/P	INT32	207	207W
+68	/Energy/InverterToAcOut	DOUBLE	0.018204445019364357	0.02kWh
+69	/Dc/0/Power	INT32	-207	-207W
+72	/Ac/Out/P	INT32	206	206W
+72	/Ac/Out/L1/V	DOUBLE	229.99000549316406	230V
+72	/Ac/Out/L1/P	INT32	206	206W
+73	/Dc/0/Power	INT32	-206	-206W
+73	/Ac/Out/P	INT32	207	207W
+74	/Ac/Out/L1/V	DOUBLE	230.36000061035156	230V
+74	/Ac/Out/L1/P	INT32	207	207W
+75	/Dc/0/Power	INT32	-207	-207W

@@ -1,0 +1,98 @@
+com.victronenergy.battery.ttyO0
+/Alarms/HighTemperature	UINT32	0	0
+/History/MaximumVoltage	DOUBLE	51.95000076293945	51.95V
+/History/AutomaticSyncs	UINT32	1	1
+/History/AverageDischarge	DOUBLE	-1067.5	-1067.5Ah
+/History/HighVoltageAlarms	UINT32	1	1
+/HardwareVersion	ARRAY	[]	
+/History/TotalAhDrawn	DOUBLE	-2333.199951171875	-2333.2Ah
+/History/DeepestDischarge	DOUBLE	-1984.0	-1984.0Ah
+/Mgmt/ProcessVersion	STRING	3.21	3.21
+/Alarms/Alarm	ARRAY	[]	
+/Alarms/MidVoltage	UINT32	0	0
+/Alarms/HighVoltage	UINT32	0	0
+/History/ChargeCycles	UINT32	2	2
+/Alarms/LowTemperature	UINT32	0	0
+/Alarms/HighStarterVoltage	UINT32	0	0
+/DeviceInstance	UINT32	258	258
+/History/LowStarterVoltageAlarms	ARRAY	[]	
+/Alarms/LowStarterVoltage	UINT32	0	0
+/History/MinimumStarterVoltage	DOUBLE	0.0	0.00V
+/Mgmt/Connection	STRING	VE.Direct	VE.Direct
+/TimeToGo	DOUBLE	19559.998046875	19560s
+/Connected	UINT32	1	1
+/Settings/HasTemperature	UINT32	0	0
+/Alarms/LowVoltage	UINT32	0	0
+/Relay/0/State	UINT32	0	0
+/Soc	DOUBLE	99.80000305175781	99.8%
+/Dc/0/Temperature	ARRAY	[]	
+/History/MaximumStarterVoltage	DOUBLE	0.0	0.00V
+/Dc/0/Voltage	DOUBLE	51.959999084472656	51.96V
+/Settings/HasMidVoltage	UINT32	0	0
+/Dc/0/MidVoltageDeviation	ARRAY	[]	
+/CustomName	STRING	Hydraulic battery	Hydraulic battery
+/FirmwareVersion	UINT32	776	v3.08
+/Dc/1/Voltage	DOUBLE	0.009999999776482582	0.01V
+/History/TimeSinceLastFullCharge	UINT32	34	34s
+/Dc/0/Current	DOUBLE	-15.300000190734863	-15.3A
+/History/LastDischarge	DOUBLE	-0.30000001192092896	-0.3Ah
+/History/LowVoltageAlarms	UINT32	16	16
+/History/MinimumVoltage	DOUBLE	5.960000038146973	5.96V
+/ConsumedAmphours	DOUBLE	-0.30000001192092896	-0.3Ah
+/History/HighStarterVoltageAlarms	ARRAY	[]	
+/History/DischargedEnergy	DOUBLE	25.579999923706055	25.58kWh
+/Dc/0/Power	DOUBLE	-789.7919921875	-790W
+/Settings/HasStarterVoltage	UINT32	1	1
+/History/ChargedEnergy	DOUBLE	14067.1904296875	14067.19kWh
+/History/FullDischarges	INT32	2	2
+/Serial	STRING	HQ1419K5H9C	HQ1419K5H9C
+/Alarms/LowSoc	UINT32	0	0
+/Mgmt/ProcessName	STRING	vedirect-dbus	vedirect-dbus
+/Dc/0/MidVoltage	ARRAY	[]	
+/ProductId	UINT32	516	0x204
+/ProductName	STRING	BMV-702	BMV-702
+
+1	/Dc/0/Power	DOUBLE	-794.9879760742188	-795W
+1	/Dc/0/Current	DOUBLE	-15.300000190734863	-15.3A
+1	/TimeToGo	DOUBLE	19619.998046875	19620s
+1	/Dc/0/Power	DOUBLE	-795.1409912109375	-795W
+1	/Dc/0/Voltage	DOUBLE	51.970001220703125	51.97V
+2	/History/TimeSinceLastFullCharge	UINT32	36	36s
+3	/Dc/0/Power	DOUBLE	-800.3380126953125	-800W
+3	/Dc/0/Current	DOUBLE	-15.399999618530273	-15.4A
+3	/TimeToGo	DOUBLE	19679.998046875	19680s
+3	/Dc/0/Power	DOUBLE	-800.4920043945312	-800W
+3	/Dc/0/Voltage	DOUBLE	51.97999954223633	51.98V
+4	/History/MaximumVoltage	DOUBLE	51.959999084472656	51.96V
+4	/History/TimeSinceLastFullCharge	UINT32	38	38s
+6	/History/TimeSinceLastFullCharge	UINT32	40	40s
+7	/Dc/0/Power	DOUBLE	-805.6900024414062	-806W
+7	/Dc/0/Current	DOUBLE	-15.5	-15.5A
+7	/TimeToGo	DOUBLE	19739.998046875	19740s
+7	/Dc/0/Power	DOUBLE	-805.844970703125	-806W
+7	/Dc/0/Voltage	DOUBLE	51.9900016784668	51.99V
+8	/History/MaximumVoltage	DOUBLE	51.970001220703125	51.97V
+8	/History/TimeSinceLastFullCharge	UINT32	42	42s
+9	/ConsumedAmphours	DOUBLE	-0.4000000059604645	-0.4Ah
+9	/Dc/0/Power	DOUBLE	-811.0440063476562	-811W
+9	/Dc/0/Current	DOUBLE	-15.600000381469727	-15.6A
+9	/Soc	DOUBLE	99.69999694824219	99.7%
+9	/Dc/1/Voltage	DOUBLE	0.0	0.00V
+10	/History/MaximumVoltage	DOUBLE	51.97999954223633	51.98V
+10	/History/TimeSinceLastFullCharge	UINT32	44	44s
+11	/TimeToGo	DOUBLE	19799.998046875	19800s
+11	/Dc/1/Voltage	DOUBLE	0.009999999776482582	0.01V
+12	/History/TotalAhDrawn	DOUBLE	-2333.300048828125	-2333.3Ah
+12	/History/TimeSinceLastFullCharge	UINT32	46	46s
+13	/Dc/0/Power	DOUBLE	-816.2429809570312	-816W
+13	/Dc/0/Current	DOUBLE	-15.699999809265137	-15.7A
+13	/Dc/0/Power	DOUBLE	-816.4000244140625	-816W
+13	/Dc/0/Voltage	DOUBLE	52.0	52.00V
+13	/Dc/1/Voltage	DOUBLE	0.0	0.00V
+14	/History/MaximumVoltage	DOUBLE	51.9900016784668	51.99V
+14	/History/TimeSinceLastFullCharge	UINT32	48	48s
+15	/Dc/0/Power	DOUBLE	-821.5999755859375	-822W
+15	/Dc/0/Current	DOUBLE	-15.800000190734863	-15.8A
+15	/Dc/1/Voltage	DOUBLE	0.009999999776482582	0.01V
+16	/History/DischargedEnergy	DOUBLE	25.59000015258789	25.59kWh
+16	/History/TimeSinceLastFullCharge	UINT32	50	50s
