@@ -1,6 +1,6 @@
 com.victronenergy.battery.ttyO1
 /DeviceInstance	INT32	0	0
-/Dc/0/Power	INT32	-20	-20
+/Dc/0/Power	INT32	20	20
 /HardwareVersion	INT32	0	0
 /Connected	INT32	1	1
 /Mgmt/ProcessName	STRING	scripts/../ext/velib_python/dbusdummyservice.pyc	scripts/../ext/velib_python/dbusdummyservice.pyc
@@ -10,16 +10,24 @@ com.victronenergy.battery.ttyO1
 /ProductId	INT32	0	0x0
 /FirmwareVersion	INT32	0	0
 /ProductName	STRING	BMV-700	BMV-700
-/Dc/0/Current	DOUBLE	-0.4	-0.4
+/Dc/0/Current	DOUBLE	0.4	0.4
 /Dc/0/Voltage	DOUBLE	55.1	55.1
 /Dc/0/Temperature	ARRAY	[]	---
 
 15	/Dc/0/Power	DOUBLE	782.0	782W
 15	/Dc/0/Current	DOUBLE	14.2	14.2A
-32	/Dc/0/Power	DOUBLE	-20.0	-20W
-32	/Dc/0/Current	DOUBLE	-0.4	-0.4A
+22	/Dc/0/Power	DOUBLE	785.0	785W
+27	/Dc/0/Power	DOUBLE	785.0	785W
+32	/Dc/0/Power	DOUBLE	20.0	20W
+32	/Dc/0/Current	DOUBLE	0.4	0.4A
+37	/Dc/0/Power	DOUBLE	22.0	22W
+42	/Dc/0/Power	DOUBLE	21.0	21W
 47	/Dc/0/Power	DOUBLE	808.0	808W
 47	/Dc/0/Current	DOUBLE	15.0	15A
-58	/Dc/0/Power	DOUBLE	-20.0	-20W
-59	/Dc/0/Current	DOUBLE	-0.4	-0.4A
-75	/Dc/0/Power	DOUBLE	-22.0	-22W
+52	/Dc/0/Power	DOUBLE	812.0	812W
+55	/Dc/0/Power	DOUBLE	810.0	810W
+58	/Dc/0/Power	DOUBLE	20.0	20W
+59	/Dc/0/Current	DOUBLE	0.4	0.4A
+63	/Dc/0/Power	DOUBLE	23.0	23W
+68	/Dc/0/Power	DOUBLE	24.0	24W
+75	/Dc/0/Power	DOUBLE	22.0	22W
