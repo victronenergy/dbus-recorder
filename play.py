@@ -88,6 +88,9 @@ class DbusRootObject(dbus.service.Object):
 			except KeyError:
 				pass
 
+		self.notify(items)
+
+	def notify(self, items):
 		# Send ItemsChanged. Make sure it has the right signature
 		# since python-dbus will guess wrong.
 		self.ItemsChanged({ k: dbus.types.Dictionary(v, signature='sv')
@@ -97,14 +100,14 @@ class DbusRootObject(dbus.service.Object):
 	def ItemsChanged(self, items):
 		logging.debug('signal ItemsChanged')
 
-class DbusPathObject(dbus.service.Object):
+class LegacyDbusPathObject(dbus.service.Object):
 	## Constructor of MyDbusObject
 	#
 	# Creates the dbus-object under the given bus-name (dbus-service-name).
 	# @param busName Return value from dbus.service.BusName, see run()).
 	# @param objectPath The dbus-object-path.
 	def __init__(self, busName, objectPath, properties):
-		super(DbusPathObject, self).__init__(busName, objectPath)
+		super(LegacyDbusPathObject, self).__init__(busName, objectPath)
 		self._objectPath = objectPath
 		self._properties = properties
 
@@ -123,10 +126,9 @@ class DbusPathObject(dbus.service.Object):
 	@dbus.service.method(InterfaceBusItem, out_signature = 's')
 	def GetText(self):
 		logging.debug("GetText %s" % self._objectPath)
-		text = '---'
 		if 'Text' in self._properties:
-			text = self._properties['Text']
-		return text
+			return self._properties['Text']
+		return '---'
 
 	## Dbus method SetValue
 	# Sets the value.
@@ -135,13 +137,12 @@ class DbusPathObject(dbus.service.Object):
 	@dbus.service.method(InterfaceBusItem, in_signature = 'v', out_signature = 'i')
 	def SetValue(self, value):
 		logging.debug("SetValue %s" % self._objectPath)
-		result = -1
 		if 'Value' in self._properties:
 			self._properties['Value'] = value
 			self._properties['Text'] = str(value)
-			self.PropertiesChanged(self._properties)
-			result = 0
-		return result
+			self.notify(self._properties)
+			return 0
+		return -1
 
 	def _setProperties(self, properties):
 		# Make sure it is wrapped. If no Value, substitute invalid.
@@ -150,11 +151,24 @@ class DbusPathObject(dbus.service.Object):
 
 	def setProperties(self, properties):
 		self._setProperties(properties)
+		self.notify(properties)
+
+	def notify(self, properties):
 		self.PropertiesChanged(properties)
 
 	@dbus.service.signal(InterfaceBusItem, signature = 'a{sv}')
 	def PropertiesChanged(self, properties):
 		logging.debug('signal PropertiesChanged %s %s' % (self._object_path, properties))
+
+class DbusPathObject(LegacyDbusPathObject):
+	""" Newer style that uses ItemsChanged. """
+	def __init__(self, root, busName, objectPath, properties):
+		super(DbusPathObject, self).__init__(busName, objectPath, properties)
+		self._root = root
+
+	def notify(self, properties):
+		# Send an ItemsChanged on root instead
+		self._root.notify({ self._objectPath: properties })
 
 @total_ordering
 class PropertiesChangedData(object):
@@ -351,6 +365,11 @@ def main():
 	DBusGMainLoop(set_as_default=True)
 
 	services = defaultdict(dict)
+	if args.nozip:
+		ObjectFactory = lambda r, *args: LegacyDbusPathObject(*args)
+	else:
+		ObjectFactory = DbusPathObject
+
 	logging.info("Opening recordings")
 	events = EventStream(*args.datafiles)
 
@@ -360,11 +379,15 @@ def main():
 		logging.info("Initialising service {}".format(it.service))
 		bus = SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in os.environ else SystemBus()
 		busName = dbus.service.BusName(it.service, bus)
+		service = services[it.service]
+
+		# Root object
+		service['/'] = root = DbusRootObject(busName, service)
+
 		for path, props in it.values.items():
 			logging.debug("path %s properties %s" % (path, props))
-			services[it.service][path] = DbusPathObject(busName, path, props)
+			service[path] = ObjectFactory(root, busName, path, props)
 
-		services[it.service]['/'] = DbusRootObject(busName, services[it.service])
 
 	logging.info("Stage set, starting simulation")
 	GLib.timeout_add(int(1000.0/args.speed), Timer(services, events, args.nozip))
