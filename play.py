@@ -290,11 +290,12 @@ class Timer(object):
 						if self.services[it.service][path].GetValue() != props['Value']:
 							self.services[it.service][path].setProperties(props)
 			else:
-				di = {}
 				for it in self.events.streams:
+					di = {}
 					for path, props in it.values.items():
 						if self.services[it.service][path].GetValue() != props['Value']:
 							di[path] = props
+					if di:
 						self.services[it.service]['/'].setItems(di)
 
 			# Restart event stream (changes)
