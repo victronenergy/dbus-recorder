@@ -2,8 +2,8 @@
 
 # Stop services
 svc -d /service/serial-starter
-svc -d /service/mk2-dbus.$(basename $(cat /etc/venus/mkx_port))
-svc -d /service/vecan
+svc -d /service/mk2-dbus.*
+svc -d /service/vecan-dbus.*
 killall vedirect_dbus
 killall gps_dbus
 
