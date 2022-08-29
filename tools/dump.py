@@ -65,5 +65,7 @@ with open(sys.argv[1], 'rb') as fp:
 
             writer.writerow([change._time, change._dbusObjectPath, typeof(value), fmt(value), change._changes['Text']])
 
+        except KeyError:
+            continue
         except EOFError:
             break
