@@ -16,6 +16,7 @@ from argparse import ArgumentParser
 import json
 from csv import reader as csvreader
 from csv import excel_tab
+import gzip
 
 InterfaceBusItem = 'com.victronenergy.BusItem'
 InterfaceProperties = 'org.freedesktop.DBus.Properties'
@@ -308,8 +309,15 @@ class Timer(object):
 		return True
 
 def open_recording(fn):
-	if fn.endswith('.csv'):
-		fp = open(fn, 'r', encoding='UTF-8')
+	_fn = fn
+	if _fn.endswith('.gz'):
+		_open = gzip.open
+		_fn = fn[:-3]
+	else:
+		_open = open
+
+	if _fn.endswith('.csv'):
+		fp = _open(fn, 'rt', encoding='UTF-8')
 		reader = csvreader(fp, dialect=excel_tab, quotechar="'")
 		try:
 			service = next(reader)[0]
@@ -334,7 +342,7 @@ def open_recording(fn):
 
 		return CsvIterator(reader, service, values)
 	else:
-		fp = open(fn, 'rb')
+		fp = _open(fn, 'rb')
 		unpickler = Unpickler(fp, encoding='UTF-8')
 		try:
 			service = unpickler.load()
