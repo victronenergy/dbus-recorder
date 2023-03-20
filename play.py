@@ -81,6 +81,16 @@ class DbusRootObject(dbus.service.Object):
 		return dbus.Dictionary(values, signature=dbus.Signature('sv'),
 			variant_level=1)
 
+	@dbus.service.method('com.victronenergy.BusItem', out_signature='a{sa{sv}}')
+	def GetItems(self):
+		return {
+			k: {
+				'Value': wrap_dbus_value(v._properties['Value']),
+				'Text': v._properties.get('Text', str(v._properties['Value']))
+			} for k, v in self.values.items() \
+			if hasattr(v, '_properties') and 'Value' in v._properties }
+
+
 	def setItems(self, items):
 		# Pass on to DbusPathObject storage
 		for path, changes in items.items():
