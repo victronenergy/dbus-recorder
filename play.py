@@ -33,7 +33,7 @@ def wrap_dbus_value(v):
 	""" Stripped down version, since everything is already dbus wrapped, we
 	    just need to handle empty lists. """
 	if isinstance(v, list) and len(v) == 0:
-		return dbus.Array([], signature=dbus.Signature('u'), variant_level=1)
+		return dbus.Array([], signature=dbus.Signature('i'), variant_level=1)
 	return v
 
 # Used for CSV to dbus wrapping
