@@ -1,0 +1,79 @@
+com.victronenergy.battery.ttyO0
+/Alarms/HighTemperature	UINT32	0	0
+/History/MaximumVoltage	DOUBLE	32.3699989319	32.37V
+/History/AutomaticSyncs	UINT32	212	212
+/History/AverageDischarge	DOUBLE	-132.100006104	-132.1Ah
+/History/HighVoltageAlarms	UINT32	0	0
+/HardwareVersion	ARRAY	[]	
+/History/TotalAhDrawn	DOUBLE	-48760.3007812	-48760.3Ah
+/History/DeepestDischarge	DOUBLE	-210.100006104	-210.1Ah
+/Mgmt/ProcessVersion	STRING	3.25	3.25
+/Alarms/Alarm	ARRAY	[]	
+/Alarms/MidVoltage	UINT32	0	0
+/Alarms/HighVoltage	UINT32	0	0
+/History/ChargeCycles	UINT32	166	166
+/Alarms/LowTemperature	UINT32	0	0
+/Alarms/HighStarterVoltage	UINT32	0	0
+/DeviceInstance	UINT32	256	256
+/History/LowStarterVoltageAlarms	ARRAY	[]	
+/Alarms/LowStarterVoltage	UINT32	0	0
+/History/MinimumStarterVoltage	DOUBLE	0.0	0.00V
+/Mgmt/Connection	STRING	VE.Direct	VE.Direct
+/TimeToGo	DOUBLE	38039.9960938	38040s
+/Connected	UINT32	1	1
+/Settings/HasTemperature	UINT32	0	0
+/Alarms/LowVoltage	UINT32	0	0
+/Relay/0/State	UINT32	0	0
+/Soc	DOUBLE	98.4000015259	98.4%
+/Dc/0/Temperature	ARRAY	[]	
+/History/MaximumStarterVoltage	DOUBLE	16.1000003815	16.10V
+/Dc/0/Voltage	DOUBLE	24.3	24.30V
+/Settings/HasMidVoltage	UINT32	0	0
+/Dc/0/MidVoltageDeviation	ARRAY	[]	
+/Devices/0/VregLink	ARRAY	[]	
+/CustomName	STRING	House battery	House battery
+/FirmwareVersion	UINT32	776	v3.08
+/Dc/1/Voltage	DOUBLE	25.1	25.1V
+/History/TimeSinceLastFullCharge	UINT32	3476	3476s
+/Dc/0/Current	DOUBLE	-3.6	-3.6A
+/History/LastDischarge	DOUBLE	-4.90000009537	-4.9Ah
+/History/LowVoltageAlarms	UINT32	0	0
+/History/MinimumVoltage	DOUBLE	23.7800006866	23.78V
+/ConsumedAmphours	DOUBLE	-5.0	-5.0Ah
+/History/HighStarterVoltageAlarms	ARRAY	[]	
+/History/DischargedEnergy	DOUBLE	1253.89001465	1253.89kWh
+/Dc/0/Power	DOUBLE	-87.48	-87W
+/Settings/HasStarterVoltage	UINT32	1	1
+/History/ChargedEnergy	DOUBLE	1216.06994629	1216.07kWh
+/History/FullDischarges	INT32	0	0
+/Serial	STRING	HQ1631Z2PQ3	HQ1631Z2PQ3
+/Alarms/LowSoc	UINT32	0	0
+/Mgmt/ProcessName	STRING	vedirect-dbus	vedirect-dbus
+/Dc/0/MidVoltage	ARRAY	[]	
+/ProductId	UINT32	516	0x204
+/ProductName	STRING	BMV-702	BMV-702
+
+1	/Dc/0/Voltage	DOUBLE	24.400000000000002	24.40V
+1	/Dc/0/Current	DOUBLE	-3.5	-3.5A
+1	/Dc/0/Power	DOUBLE	-85.4	-85W
+2	/Dc/0/Voltage	DOUBLE	24.5	24.50V
+2	/Dc/0/Current	DOUBLE	-3.4	-3.4A
+2	/Dc/0/Power	DOUBLE	-83.3	-83W
+3	/Dc/0/Voltage	DOUBLE	24.400000000000002	24.40V
+3	/Dc/0/Current	DOUBLE	-3.5	-3.5A
+3	/Dc/0/Power	DOUBLE	-85.4	-85W
+4	/Dc/0/Voltage	DOUBLE	24.3	24.30V
+4	/Dc/0/Current	DOUBLE	-3.6	-3.6A
+4	/Dc/0/Power	DOUBLE	-87.48	-87W
+5	/Dc/0/Voltage	DOUBLE	24.2	24.20V
+5	/Dc/0/Current	DOUBLE	-3.7	-3.7A
+5	/Dc/0/Power	DOUBLE	-89.54	-90W
+6	/Dc/0/Voltage	DOUBLE	24.1	24.10V
+6	/Dc/0/Current	DOUBLE	-3.8000000000000003	-3.8A
+6	/Dc/0/Power	DOUBLE	-91.58000000000001	-92W
+7	/Dc/0/Voltage	DOUBLE	24.2	24.20V
+7	/Dc/0/Current	DOUBLE	-3.7	-3.7A
+7	/Dc/0/Power	DOUBLE	-89.54	-90W
+8	/Dc/0/Voltage	DOUBLE	24.3	24.30V
+8	/Dc/0/Current	DOUBLE	-3.6	-3.6A
+8	/Dc/0/Power	DOUBLE	-87.48	-87W

@@ -1,0 +1,67 @@
+com.victronenergy.alternator.ttyUSB0
+/Alarms/Alarm	UINT32	0	0
+/Alarms/HighStarterVoltage	UINT32	0	0
+/Alarms/HighTemperature	UINT32	0	0
+/Alarms/HighVoltage	UINT32	0	0
+/Alarms/LowSoc	UINT32	0	0
+/Alarms/LowStarterVoltage	UINT32	0	0
+/Alarms/LowTemperature	UINT32	0	0
+/Alarms/LowVoltage	UINT32	0	0
+/Connected	UINT32	1	1
+/CustomName	STRING		
+/Dc/0/Current	DOUBLE	9.2	9.2A
+/Dc/0/Power	DOUBLE	220.76300048828125	220W
+/Dc/0/Temperature	ARRAY	[]	
+/Dc/0/Voltage	DOUBLE	24.39	24.39V
+/Dc/1/Voltage	ARRAY	[]	
+/DeviceInstance	UINT32	288	288
+/Devices/0/CustomName	STRING		
+/Devices/0/DeviceInstance	UINT32	288	288
+/Devices/0/FirmwareVersion	UINT32	1032	v4.08
+/Devices/0/ProductId	UINT32	45184	0xb080
+/Devices/0/ProductName	STRING	Wakespeed WS500 Alternator Regulator	Wakespeed WS500 Alternator Regulator
+/Devices/0/ServiceName	STRING	com.victronenergy.alternator.ttyUSB0	com.victronenergy.alternator.ttyUSB0
+/Devices/0/VregLink	ARRAY	[]	
+/FirmwareVersion	UINT32	785	v3.11
+/GroupId	ARRAY	[]	
+/HardwareVersion	ARRAY	[]	
+/History/AutomaticSyncs	UINT32	100	100
+/History/AverageDischarge	DOUBLE	-32.79999923706055	-32.8Ah
+/History/ChargeCycles	UINT32	33	33
+/History/ChargedEnergy	DOUBLE	258.3999938964844	258.40kWh
+/History/DeepestDischarge	DOUBLE	-200.8000030517578	-200.8Ah
+/History/DischargedEnergy	DOUBLE	137.61000061035156	137.61kWh
+/History/FullDischarges	UINT32	1	1
+/History/HighStarterVoltageAlarms	ARRAY	[]	
+/History/HighVoltageAlarms	UINT32	0	0
+/History/LastDischarge	DOUBLE	-0.800000011920929	-0.8Ah
+/History/LowStarterVoltageAlarms	ARRAY	[]	
+/History/LowVoltageAlarms	UINT32	0	0
+/History/MaximumStarterVoltage	ARRAY	[]	
+/History/MaximumVoltage	DOUBLE	17.239999771118164	17.24V
+/History/MinimumStarterVoltage	ARRAY	[]	
+/History/MinimumVoltage	DOUBLE	0.0	0.00V
+/History/TotalAhDrawn	DOUBLE	-10524.599609375	-10524.6Ah
+/Mgmt/Connection	STRING	USB	USB
+/Mgmt/ProcessName	STRING	vedirect-dbus	vedirect-dbus
+/Mgmt/ProcessVersion	STRING	3.65	3.65
+/ProductId	UINT32	45184	0xb080
+/ProductName	STRING	Wakespeed WS500 Alternator Regulator	Wakespeed WS500 Alternator Regulator
+/Relay/0/State	UINT32	0	0
+/Serial	STRING	HQ1641JEWM5	HQ1641JEWM5
+/Settings/HasMidVoltage	UINT32	0	0
+/Settings/HasStarterVoltage	UINT32	0	0
+/Settings/HasTemperature	UINT32	0	0
+/Settings/RelayMode	UINT32	2	2
+/Soc	DOUBLE	99.80000305175781	99.8%
+/VEDirect/HexChecksumErrors	UINT32	0	0
+/VEDirect/HexInvalidCharacterErrors	UINT32	0	0
+/VEDirect/HexUnfinishedErrors	UINT32	0	0
+/VEDirect/TextChecksumErrors	UINT32	1	1
+/VEDirect/TextParseError	UINT32	0	0
+/VEDirect/TextUnfinishedErrors	UINT32	0	0
+
+4	/Dc/0/Power	DOUBLE	221.0	221W
+4	/Dc/0/Current	DOUBLE	9.3	9.3A
+8	/Dc/0/Power	DOUBLE	219.0	219W
+8	/Dc/0/Current	DOUBLE	9.2	9.2A

@@ -19,9 +19,10 @@ case "$1" in
         ;;
     "3")
         # Boat/Motorhome demo 2
-        start solarcharger.csv vebus-marine.csv battery-marine.csv \
-			tank_fwater.csv tank_fuel.csv tank_oil.csv tank_bwater.csv \
-			ruuvi.csv
+		start demo2_alternator.csv demo2_diesel.csv demo2_solarcharger.csv \
+			demo2_battery.csv demo2_freezer.csv demo2_vebus.csv \
+			demo2_blackwater.csv demo2_fridge.csv demo2_water.csv
+
         ;;
     *)
         # ESS demo
