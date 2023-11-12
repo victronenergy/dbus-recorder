@@ -9,9 +9,9 @@ com.victronenergy.alternator.ttyUSB0
 /Alarms/LowVoltage	UINT32	0	0
 /Connected	UINT32	1	1
 /CustomName	STRING		
-/Dc/0/Current	DOUBLE	9.2	9.2A
-/Dc/0/Power	DOUBLE	220.76300048828125	220W
-/Dc/0/Temperature	ARRAY	[]	
+/Dc/0/Current	DOUBLE	66.2	66.2A
+/Dc/0/Power	DOUBLE	1608.8	1609W
+/Dc/0/Temperature	DOUBLE	67.0	67°C
 /Dc/0/Voltage	DOUBLE	24.39	24.39V
 /Dc/1/Voltage	ARRAY	[]	
 /DeviceInstance	UINT32	288	288
@@ -22,6 +22,9 @@ com.victronenergy.alternator.ttyUSB0
 /Devices/0/ProductName	STRING	Wakespeed WS500 Alternator Regulator	Wakespeed WS500 Alternator Regulator
 /Devices/0/ServiceName	STRING	com.victronenergy.alternator.ttyUSB0	com.victronenergy.alternator.ttyUSB0
 /Devices/0/VregLink	ARRAY	[]	
+/Engine/Speed	UINT32	1800	1800rpm
+/ErrorCode	UINT32	0	No error
+/FieldDrive	DOUBLE	33	33%
 /FirmwareVersion	UINT32	785	v3.11
 /GroupId	ARRAY	[]	
 /HardwareVersion	ARRAY	[]	
@@ -53,7 +56,9 @@ com.victronenergy.alternator.ttyUSB0
 /Settings/HasStarterVoltage	UINT32	0	0
 /Settings/HasTemperature	UINT32	0	0
 /Settings/RelayMode	UINT32	2	2
+/Speed	UINT32	4300	4300rpm
 /Soc	DOUBLE	99.80000305175781	99.8%
+/State	UINT32	3	bulk
 /VEDirect/HexChecksumErrors	UINT32	0	0
 /VEDirect/HexInvalidCharacterErrors	UINT32	0	0
 /VEDirect/HexUnfinishedErrors	UINT32	0	0
@@ -61,7 +66,7 @@ com.victronenergy.alternator.ttyUSB0
 /VEDirect/TextParseError	UINT32	0	0
 /VEDirect/TextUnfinishedErrors	UINT32	0	0
 
-4	/Dc/0/Power	DOUBLE	221.0	221W
-4	/Dc/0/Current	DOUBLE	9.3	9.3A
-8	/Dc/0/Power	DOUBLE	219.0	219W
-8	/Dc/0/Current	DOUBLE	9.2	9.2A
+4	/Dc/0/Power	DOUBLE	1611.0	1611W
+4	/Dc/0/Current	DOUBLE	66.3	66.3A
+8	/Dc/0/Power	DOUBLE	1608.8	1609W
+8	/Dc/0/Current	DOUBLE	66.2	66.2A
