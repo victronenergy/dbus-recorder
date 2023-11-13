@@ -22,7 +22,7 @@ case "$1" in
 		start demo2_alternator.csv demo2_diesel.csv demo2_solarcharger.csv \
 			demo2_battery.csv demo2_freezer.csv demo2_vebus.csv \
 			demo2_blackwater.csv demo2_fridge.csv demo2_water.csv \
-			demo2_hydropack_battery.csv demo2_cabine.csv demo2_outside.csv
+			demo2_hydropack_battery.csv demo2_cabin.csv demo2_outside.csv
         ;;
     *)
         # ESS demo
