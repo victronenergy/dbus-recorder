@@ -9,13 +9,13 @@ com.victronenergy.tank.adc_builtin0_1
 /Alarms/Low/Enable	INT32	0	Disabled
 /Alarms/Low/Restore	INT32	15	15
 /Alarms/Low/State	ARRAY	[]	
-/Capacity	DOUBLE	0.100	0.100m3
+/Capacity	DOUBLE	0.050	0.050m3
 /Connected	UINT32	1	1
-/CustomName	STRING	Diesel	Diesel
+/CustomName	STRING	Daytank	Daytank
 /DeviceInstance	UINT32	20	20
 /FilterLength	INT32	10	10s
 /FluidType	INT32	0	Fuel
-/Level	UINT32	44	44%
+/Level	UINT32	14	14%
 /Mgmt/Connection	STRING	Tank Level input 1	Tank Level input 1
 /Mgmt/ProcessName	STRING	dbus-adc	dbus-adc
 /Mgmt/ProcessVersion	STRING	1.32	1.32
