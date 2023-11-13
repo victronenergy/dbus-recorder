@@ -19,7 +19,7 @@ com.victronenergy.alternator.ttyUSB0
 /Devices/0/DeviceInstance	UINT32	288	288
 /Devices/0/FirmwareVersion	UINT32	1032	v4.08
 /Devices/0/ProductId	UINT32	45184	0xb080
-/Devices/0/ProductName	STRING	Wakespeed WS500 Alternator Regulator	Wakespeed WS500 Alternator Regulator
+/Devices/0/ProductName	STRING	Alternator	Alternator
 /Devices/0/ServiceName	STRING	com.victronenergy.alternator.ttyUSB0	com.victronenergy.alternator.ttyUSB0
 /Devices/0/VregLink	ARRAY	[]	
 /Engine/Speed	UINT32	1800	1800rpm
@@ -49,7 +49,7 @@ com.victronenergy.alternator.ttyUSB0
 /Mgmt/ProcessName	STRING	vedirect-dbus	vedirect-dbus
 /Mgmt/ProcessVersion	STRING	3.65	3.65
 /ProductId	UINT32	45184	0xb080
-/ProductName	STRING	Wakespeed WS500 Alternator Regulator	Wakespeed WS500 Alternator Regulator
+/ProductName	STRING	Alternator	Alternator
 /Relay/0/State	UINT32	0	0
 /Serial	STRING	HQ1641JEWM5	HQ1641JEWM5
 /Settings/HasMidVoltage	UINT32	0	0
