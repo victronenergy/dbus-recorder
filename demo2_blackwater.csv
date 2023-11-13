@@ -15,7 +15,7 @@ com.victronenergy.tank.adc_builtin0_3
 /DeviceInstance	UINT32	22	22
 /FilterLength	INT32	10	10s
 /FluidType	INT32	5	Black water
-/Level	UINT32	29	29%
+/Level	UINT32	91	91%
 /Mgmt/Connection	STRING	Tank Level input 1	Tank Level input 1
 /Mgmt/ProcessName	STRING	dbus-adc	dbus-adc
 /Mgmt/ProcessVersion	STRING	1.32	1.32

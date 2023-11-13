@@ -1,18 +1,18 @@
-com.victronenergy.temperature.adc_builtin0_1
+com.victronenergy.temperature.adc_builtin0_4
 /TemperatureType	INT32	1	1
 /Offset	DOUBLE	0.0	0
 /Scale	DOUBLE	1.0	1
-/Temperature	INT32	5	5C
+/Temperature	INT32	13	13C
 /RawUnit	STRING	V	V
 /RawValue	DOUBLE	2.930032968521118	3
 /FilterLength	INT32	10	10s
-/CustomName	STRING	Fridge	Fridge
+/CustomName	STRING	Outside	Outside
 /Status	UINT32	0	Ok
-/DeviceInstance	UINT32	25	25
+/DeviceInstance	UINT32	27	27
 /Connected	UINT32	1	1
 /ProductName	STRING	Generic Temperature Input	Generic Temperature Input
 /ProductId	UINT32	41314	A162
-/Mgmt/Connection	STRING	Temperature input 2	Temperature input 2
+/Mgmt/Connection	STRING	Temperature input 5	Temperature input 5
 /Mgmt/ProcessVersion	STRING	1.32	1.32
 /Mgmt/ProcessName	STRING	dbus-adc	dbus-adc
 
