@@ -13,11 +13,13 @@ class PropertiesChangedData(object):
 def demarshall(typ, v):
 	de = {
 		"INT32": dbus.types.Int32,
+		"INT16": dbus.types.Int16,
 		"UINT32": dbus.types.UInt32,
 		"UINT16": dbus.types.UInt16,
 		"BYTE": lambda x: dbus.types.Byte(int(x)),
 		"DOUBLE": dbus.types.Double,
 		"STRING": dbus.types.String,
+		"BOOLEAN": dbus.types.Boolean,
 	}
 
 	if typ.startswith("ARRAY"):

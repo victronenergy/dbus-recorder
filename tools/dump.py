@@ -22,6 +22,8 @@ class PropertiesChangedData(object):
 def typeof(v):
     if isinstance(v, dbus.types.Int32):
         return "INT32"
+    if isinstance(v, dbus.types.Int16):
+        return "INT16"
     if isinstance(v, dbus.types.UInt32):
         return "UINT32"
     if isinstance(v, dbus.types.UInt16):
@@ -37,6 +39,8 @@ def typeof(v):
             return "ARRAY"
     if isinstance(v, dbus.types.String):
         return "STRING"
+    if isinstance(v, dbus.types.Boolean):
+        return "BOOLEAN"
     return "UNKNOWN"
 
 def fmt(v):
