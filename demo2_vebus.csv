@@ -15,30 +15,30 @@ com.victronenergy.vebus.ttyO1
 /Energy/AcOutToAcIn1	DOUBLE	0.0	0.00kWh
 /Energy/AcIn2ToInverter	DOUBLE	0.0	0.00kWh
 /Ac/PowerMeasurementType	UINT32	4	4
-/Leds/Bulk	BYTE	1	on
+/Leds/Bulk	UINT32	1	on
 /Ac/ActiveIn/CurrentLimit	DOUBLE	32.0	32.0A
 /Ac/ActiveIn/S	INT32	100	100VA
 /Ac/ActiveIn/P	INT32	51	51W
 /Alarms/L1/Overload	UINT32	0	ok
-/Leds/Absorption	BYTE	0	off
-/Leds/Overload	BYTE	0	off
+/Leds/Absorption	UINT32	0	off
+/Leds/Overload	UINT32	0	off
 /Interfaces/Mk2/ProductName	STRING	MK2 20Mhz	MK2 20Mhz
-/Leds/Temperature	BYTE	0	off
+/Leds/Temperature	UINT32	0	off
 /Mgmt/ProcessVersion	STRING	2.74	2.74
-/Leds/Float	BYTE	0	off
+/Leds/Float	UINT32	0	off
 /Energy/OutToInverter	DOUBLE	0.0	0.00kWh
 /Mode	UINT32	3	on
 /Alarms/LowBattery	UINT32	0	ok
-/Connected	BYTE	1	1
+/Connected	UINT32	1	1
 /Devices/0/Assistants	ARRAY[BYTE]	[62, 1, 75, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]	0x013e,0x014b
 /Dc/0/Voltage	DOUBLE	24.2299995422	24.23V
 /Ac/ActiveIn/CurrentLimitIsAdjustable	UINT32	1	1
 /Ac/ActiveIn/Connected	UINT32	1	yes
-/Leds/Mains	BYTE	1	on
+/Leds/Mains	UINT32	1	on
 /Dc/0/Current	DOUBLE	12.0	12.0A
 /ModeIsAdjustable	UINT32	1	1
 /ProductId	UINT32	9745	2611
-/Leds/LowBattery	BYTE	0	off
+/Leds/LowBattery	UINT32	0	off
 /State	UINT32	3	bulk
 /Devices/NumberOfMultis	INT32	1	1
 /Interfaces/Mk2/Tunnel	ARRAY	[]	
@@ -64,7 +64,7 @@ com.victronenergy.vebus.ttyO1
 /Energy/InverterToAcIn1	DOUBLE	0.0	0.00kWh
 /Energy/InverterToAcIn2	DOUBLE	0.0	0.00kWh
 /Interfaces/Mk2/Version	UINT32	1130136	1130136
-/Leds/Inverter	BYTE	0	off
+/Leds/Inverter	UINT32	0	off
 /Devices/2/Assistants	ARRAY[BYTE]	[62, 1, 75, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]	0x013e,0x014b
 /Alarms/Ripple	UINT32	0	ok
 /Alarms/L1/LowBattery	UINT32	0	ok
@@ -75,7 +75,7 @@ com.victronenergy.vebus.ttyO1
 /Alarms/TemperatureSensor	UINT32	0	0
 /Ac/NumberOfPhases	UINT32	1	1
 /Ac/Out/L1/F	DOUBLE	50.0255126953	50.0Hz
-/VebusError	BYTE	0	0
+/VebusError	UINT32	0	0
 /Devices/Dmc/Version	ARRAY	[]	
 /Quirks	UINT16	2	2
 /Dc/0/Temperature	ARRAY	[]	
@@ -83,7 +83,7 @@ com.victronenergy.vebus.ttyO1
 /Ac/Out/L1/S	INT32	400	400VA
 /Energy/AcOutToAcIn2	DOUBLE	0.0	0.00kWh
 /Ac/Out/L1/V	DOUBLE	230.5	230V
-/FirmwareFeatures/SetChargeState	BYTE	1	1
+/FirmwareFeatures/SetChargeState	UINT32	1	1
 /Alarms/Overload	UINT32	0	ok
 /Devices/0/Version	UINT32	2644401	2644401
 /ProductName	STRING	MultiPlus-II 24/3000/70-32	MultiPlus-II 24/3000/70-32

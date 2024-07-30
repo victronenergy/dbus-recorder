@@ -144,7 +144,7 @@ com.victronenergy.solarcharger.ttyO2
 /History/Daily/12/MaxPower	DOUBLE	516.0	516
 /History/Daily/5/Yield	DOUBLE	2.74000000954	3
 /History/Daily/30/TimeInFloat	DOUBLE	0.0	0
-/Link/TemperatureSenseActive	BYTE	0	0
+/Link/TemperatureSenseActive	UINT32	0	0
 /History/Daily/11/LastError3	INT32	0	0
 /History/Daily/26/TimeInAbsorption	DOUBLE	0.0	0
 /History/Daily/23/TimeInAbsorption	DOUBLE	0.0	0
@@ -289,7 +289,7 @@ com.victronenergy.solarcharger.ttyO2
 /History/Daily/9/TimeInBulk	DOUBLE	896.0	896
 /History/Daily/11/TimeInAbsorption	DOUBLE	0.0	0
 /History/Daily/10/MaxBatteryCurrent	DOUBLE	0.300000011921	0
-/Link/VoltageSenseActive	BYTE	0	0
+/Link/VoltageSenseActive	UINT32	0	0
 /History/Daily/25/Raw	ARRAY[BYTE]	[0, 0, 0, 0, 158, 0, 0, 0, 255, 255, 255, 255, 88, 22, 154, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 97, 1, 0, 0, 64, 0, 249, 38, 80, 1, 0, 0]	buffer (40 bytes)
 /History/Daily/7/MinBatteryVoltage	DOUBLE	49.6300010681	50
 /History/Daily/4/Nr	DOUBLE	357.0	357

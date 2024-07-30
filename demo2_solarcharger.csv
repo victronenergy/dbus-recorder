@@ -8,8 +8,8 @@ com.victronenergy.solarcharger.ttyO0
 /Link/ChargeVoltage	DOUBLE	14.199999809265137	14.20V
 /Link/TemperatureSense	ARRAY	[]	
 /Link/VoltageSense	DOUBLE	26.399999618530273	26.40V
-/Link/TemperatureSenseActive	BYTE	0	0
-/Link/VoltageSenseActive	BYTE	1	1
+/Link/TemperatureSenseActive	UINT32	0	0
+/Link/VoltageSenseActive	UINT32	1	1
 /Link/NetworkStatus	UINT32	0	0
 /Link/NetworkMode	UINT32	5	5
 /Pv/V	DOUBLE	49.7	49.70V

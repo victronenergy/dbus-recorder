@@ -28,7 +28,7 @@ com.victronenergy.vebus.ttyO1
 /AcSensor/2/Current	ARRAY	[]	
 /Hub4/L1/DisableFeedIn	INT32	0	0
 /AcSensor/4/Location	ARRAY	[]	
-/Leds/Bulk	BYTE	0	off
+/Leds/Bulk	UINT32	0	off
 /Bms/AllowToDischarge	INT32	1	1
 /AcSensor/1/Current	ARRAY	[]	
 /Ac/ActiveIn/CurrentLimit	DOUBLE	50.0	50.0A
@@ -41,12 +41,12 @@ com.victronenergy.vebus.ttyO1
 /Ac/ActiveIn/P	INT32	407	407W
 /Ac/ActiveIn/L1/P	INT32	366	366W
 /AcSensor/8/Voltage	ARRAY	[]	
-/Leds/Absorption	BYTE	1	on
-/Leds/Overload	BYTE	0	off
+/Leds/Absorption	UINT32	1	on
+/Leds/Overload	UINT32	0	off
 /Interfaces/Mk2/ProductName	STRING	MK2 20Mhz	MK2 20Mhz
 /AcSensor/5/Power	ARRAY	[]	
 /AcSensor/1/Voltage	ARRAY	[]	
-/Leds/Temperature	BYTE	0	off
+/Leds/Temperature	UINT32	0	off
 /AcSensor/6/Power	ARRAY	[]	
 /Alarms/L3/Overload	UINT32	0	ok
 /AcSensor/1/Location	ARRAY	[]	
@@ -56,7 +56,7 @@ com.victronenergy.vebus.ttyO1
 /AcSensor/7/Current	ARRAY	[]	
 /Mode	UINT32	3	on
 /AcSensor/7/Location	ARRAY	[]	
-/Connected	BYTE	1	1
+/Connected	UINT32	1	1
 /Devices/0/Assistants	ARRAY[BYTE]	[97, 1, 44, 1, 44, 1, 38, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]	0x0161,0x012c,0x012c,0x0126
 /AcSensor/2/Energy	ARRAY	[]	
 /Bms/BmsExpected	INT32	1	1
@@ -68,7 +68,7 @@ com.victronenergy.vebus.ttyO1
 /Ac/ActiveIn/CurrentLimitIsAdjustable	UINT32	0	0
 /Ac/ActiveIn/Connected	UINT32	1	yes
 /Hub4/AssistantId	UINT16	5	ESS
-/Leds/Mains	BYTE	1	on
+/Leds/Mains	UINT32	1	on
 /Dc/0/Current	DOUBLE	1.89999997616	1.9A
 /ModeIsAdjustable	UINT32	1	1
 /Bms/AllowToChargeRate	UINT32	14	14
@@ -76,7 +76,7 @@ com.victronenergy.vebus.ttyO1
 /ProductId	UINT32	9760	2620
 /Alarms/L2/LowBattery	UINT32	0	ok
 /AcSensor/7/Energy	ARRAY	[]	
-/Leds/LowBattery	BYTE	0	off
+/Leds/LowBattery	UINT32	0	off
 /Bms/Error	INT32	0	0
 /AcSensor/7/Power	ARRAY	[]	
 /AcSensor/7/Voltage	ARRAY	[]	
@@ -87,7 +87,7 @@ com.victronenergy.vebus.ttyO1
 /ShortIds	UINT32	1	1
 /VebusMainState	UINT32	9	charge
 /AcSensor/4/Phase	ARRAY	[]	
-/Leds/Float	BYTE	0	off
+/Leds/Float	UINT32	0	off
 /AcSensor/6/Voltage	ARRAY	[]	
 /Dc/0/MaxChargeCurrent	DOUBLE	35.0	35.0A
 /AcSensor/5/Location	ARRAY	[]	
@@ -137,7 +137,7 @@ com.victronenergy.vebus.ttyO1
 /Energy/InverterToAcIn2	DOUBLE	0.0	0.00kWh
 /AcSensor/0/Current	ARRAY	[]	
 /Interfaces/Mk2/Version	UINT32	1130136	1130136
-/Leds/Inverter	BYTE	0	off
+/Leds/Inverter	UINT32	0	off
 /Alarms/L1/LowBattery	UINT32	0	ok
 /AcSensor/5/Energy	ARRAY	[]	
 /AcSensor/3/Voltage	ARRAY	[]	
@@ -149,7 +149,7 @@ com.victronenergy.vebus.ttyO1
 /Alarms/TemperatureSensor	UINT32	0	0
 /Ac/NumberOfPhases	UINT32	1	1
 /Ac/Out/L1/F	DOUBLE	49.8982200623	49.9Hz
-/VebusError	BYTE	0	0
+/VebusError	UINT32	0	0
 /AcSensor/3/Energy	ARRAY	[]	
 /Devices/Dmc/Version	ARRAY	[]	
 /Hub4/L1/DisableCharge	INT32	0	0

@@ -1,7 +1,7 @@
 com.victronenergy.tank.socketcan_can0_di3_uc69
 /Serial	ARRAY	[]	
 /Capacity	DOUBLE	1.0	1.0000m3
-/DeviceInstance	BYTE	3	3
+/DeviceInstance	UINT32	3	3
 /HardwareVersion	STRING	VE.Can Resistive Tnk Sndr Adpter	VE.Can Resistive Tnk Sndr Adpter
 /N2kUniqueNumber	UINT32	69	69
 /Mgmt/ProcessVersion	STRING	2.24	2.24
@@ -13,7 +13,7 @@ com.victronenergy.tank.socketcan_can0_di3_uc69
 /ProductId	UINT16	41312	0xA160
 /FirmwareVersion	STRING	v3.0.2V	v3.0.2V
 /ProductName	STRING	Tank sensor	Tank sensor
-/FluidType	BYTE	0	0
+/FluidType	UINT32	0	0
 
 0	/Level	DOUBLE	17.775999069213867	17.8%
 1	/Remaining	DOUBLE	0.17775999009609222	0.1778m3
