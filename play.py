@@ -88,10 +88,14 @@ class DbusRootObject(dbus.service.Object):
 		return {
 			k: {
 				'Value': wrap_dbus_value(v._properties['Value']),
-				'Text': v._properties.get('Text', str(v._properties['Value']))
+				'Text': v._properties.get('Text', self.stringify(v._properties['Value']))
 			} for k, v in self.values.items() \
 			if hasattr(v, '_properties') and 'Value' in v._properties }
 
+	def stringify(self, val):
+		if isinstance(val, dbus.types.Byte):
+			val = int(val)
+		return str(val)
 
 	def setItems(self, items):
 		# Pass on to DbusPathObject storage
