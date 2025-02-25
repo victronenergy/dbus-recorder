@@ -42,13 +42,19 @@ class DbusDevice(object):
 		return self._dbus_name
 	
 	def getValues(self):
-		data = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetValue', '', [])
-		texts = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetText', '', [])
+		try:
+			values = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetItems', '', [])
+			for v in values.values():
+				v['Valid'] = bool(v['Value'] != dbus.Array([]))
+			return values
+		except dbus.exceptions.DBusException:
+			data = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetValue', '', [])
+			texts = self._dbus_conn.call_blocking(self._dbus_name, '/', None, 'GetText', '', [])
 
-		values = {}
-		for p, v in data.items():
-			values['/' + p] = {
-				'Value': v,
-				'Valid': bool(v != dbus.Array([])),
-				'Text': texts[p]}
-		return values
+			values = {}
+			for p, v in data.items():
+				values['/' + p] = {
+					'Value': v,
+					'Valid': bool(v != dbus.Array([])),
+					'Text': texts[p]}
+			return values
