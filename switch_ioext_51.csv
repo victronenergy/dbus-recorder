@@ -1,0 +1,239 @@
+com.victronenergy.switch.HQ2502VTENN
+/Mgmt/ProcessName	STRING	/opt/victronenergy/dbus-switch/dbus-switch.py	/opt/victronenergy/dbus-switch/dbus-switch.py
+/Mgmt/ProcessVersion	STRING	0.7	0.7
+/Mgmt/Connection	STRING	USB	USB
+/DeviceInstance	INT32	51	51
+/ProductId	INT32	49178	0xC01A
+/ProductName	STRING	GX IO extender 150	GX IO extender 150
+/FirmwareVersion	STRING	0.7	0.7
+/HardwareVersion	ARRAY	[]	---
+/Connected	INT32	1	1
+/SwitchableOutput/pwm_4/State	INT32	0	0
+/SwitchableOutput/pwm_4/Status	INT32	0	Off
+/SwitchableOutput/pwm_4/Name	STRING	PWM 4	PWM 4
+/SwitchableOutput/pwm_4/Dimming	INT32	26	26%
+/SwitchableOutput/pwm_4/Settings/Group	STRING		
+/SwitchableOutput/pwm_4/Settings/CustomName	STRING		
+/SwitchableOutput/pwm_4/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/pwm_4/Settings/Type	INT32	2	Dimmable
+/SwitchableOutput/pwm_4/Settings/ValidTypes	INT32	4	Dimmable
+/SwitchableOutput/pwm_4/Settings/Function	INT32	2	Manual
+/SwitchableOutput/pwm_4/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/pwm_3/State	INT32	1	1
+/SwitchableOutput/pwm_3/Status	INT32	9	On
+/SwitchableOutput/pwm_3/Name	STRING	PWM 3	PWM 3
+/SwitchableOutput/pwm_3/Dimming	INT32	77	77%
+/SwitchableOutput/pwm_3/Settings/Group	STRING	Dimmer	Dimmer
+/SwitchableOutput/pwm_3/Settings/CustomName	STRING	Dimmer 3	Dimmer 3
+/SwitchableOutput/pwm_3/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/pwm_3/Settings/Type	INT32	2	Dimmable
+/SwitchableOutput/pwm_3/Settings/ValidTypes	INT32	4	Dimmable
+/SwitchableOutput/pwm_3/Settings/Function	INT32	2	Manual
+/SwitchableOutput/pwm_3/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/pwm_2/State	INT32	0	0
+/SwitchableOutput/pwm_2/Status	INT32	0	Off
+/SwitchableOutput/pwm_2/Name	STRING	PWM 2	PWM 2
+/SwitchableOutput/pwm_2/Dimming	INT32	27	27%
+/SwitchableOutput/pwm_2/Settings/Group	STRING		
+/SwitchableOutput/pwm_2/Settings/CustomName	STRING		
+/SwitchableOutput/pwm_2/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/pwm_2/Settings/Type	INT32	2	Dimmable
+/SwitchableOutput/pwm_2/Settings/ValidTypes	INT32	4	Dimmable
+/SwitchableOutput/pwm_2/Settings/Function	INT32	2	Manual
+/SwitchableOutput/pwm_2/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/pwm_1/State	INT32	1	1
+/SwitchableOutput/pwm_1/Status	INT32	9	On
+/SwitchableOutput/pwm_1/Name	STRING	PWM 1	PWM 1
+/SwitchableOutput/pwm_1/Dimming	INT32	92	92%
+/SwitchableOutput/pwm_1/Settings/Group	STRING	Group	Group
+/SwitchableOutput/pwm_1/Settings/CustomName	STRING	Dimmer1	Dimmer1
+/SwitchableOutput/pwm_1/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/pwm_1/Settings/Type	INT32	2	Dimmable
+/SwitchableOutput/pwm_1/Settings/ValidTypes	INT32	4	Dimmable
+/SwitchableOutput/pwm_1/Settings/Function	INT32	2	Manual
+/SwitchableOutput/pwm_1/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/output_5/State	INT32	0	0
+/SwitchableOutput/output_5/Status	INT32	0	Off
+/SwitchableOutput/output_5/Name	STRING	Output 5	Output 5
+/SwitchableOutput/output_5/Settings/Group	STRING	Victron	Victron
+/SwitchableOutput/output_5/Settings/CustomName	STRING	Output5	Output5
+/SwitchableOutput/output_5/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/output_5/Settings/Type	INT32	0	Momentary
+/SwitchableOutput/output_5/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/output_5/Settings/Function	INT32	2	Manual
+/SwitchableOutput/output_5/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/output_6/State	INT32	1	1
+/SwitchableOutput/output_6/Status	INT32	9	On
+/SwitchableOutput/output_6/Name	STRING	Output 6	Output 6
+/SwitchableOutput/output_6/Settings/Group	STRING	Out6	Out6
+/SwitchableOutput/output_6/Settings/CustomName	STRING	asdf6	asdf6
+/SwitchableOutput/output_6/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/output_6/Settings/Type	INT32	1	Latching
+/SwitchableOutput/output_6/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/output_6/Settings/Function	INT32	2	Manual
+/SwitchableOutput/output_6/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/output_7/State	INT32	0	0
+/SwitchableOutput/output_7/Status	INT32	0	Off
+/SwitchableOutput/output_7/Name	STRING	Output 7	Output 7
+/SwitchableOutput/output_7/Settings/Group	STRING	Group	Group
+/SwitchableOutput/output_7/Settings/CustomName	STRING	Osadfut7	Osadfut7
+/SwitchableOutput/output_7/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/output_7/Settings/Type	INT32	0	Momentary
+/SwitchableOutput/output_7/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/output_7/Settings/Function	INT32	2	Manual
+/SwitchableOutput/output_7/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/output_8/State	INT32	1	1
+/SwitchableOutput/output_8/Status	INT32	9	On
+/SwitchableOutput/output_8/Name	STRING	Output 8	Output 8
+/SwitchableOutput/output_8/Settings/Group	STRING	Dimmer	Dimmer
+/SwitchableOutput/output_8/Settings/CustomName	STRING	Output8	Output8
+/SwitchableOutput/output_8/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/output_8/Settings/Type	INT32	1	Latching
+/SwitchableOutput/output_8/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/output_8/Settings/Function	INT32	2	Manual
+/SwitchableOutput/output_8/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/relay_1/State	INT32	1	1
+/SwitchableOutput/relay_1/Status	INT32	9	On
+/SwitchableOutput/relay_1/Name	STRING	Relay 1	Relay 1
+/SwitchableOutput/relay_1/Settings/Group	STRING	Relays	Relays
+/SwitchableOutput/relay_1/Settings/CustomName	STRING	R1	R1
+/SwitchableOutput/relay_1/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/relay_1/Settings/Type	INT32	1	Latching
+/SwitchableOutput/relay_1/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/relay_1/Settings/Function	INT32	2	Manual
+/SwitchableOutput/relay_1/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/relay_2/State	INT32	0	0
+/SwitchableOutput/relay_2/Status	INT32	0	Off
+/SwitchableOutput/relay_2/Name	STRING	Relay 2	Relay 2
+/SwitchableOutput/relay_2/Settings/Group	STRING	Relays	Relays
+/SwitchableOutput/relay_2/Settings/CustomName	STRING	R2	R2
+/SwitchableOutput/relay_2/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/relay_2/Settings/Type	INT32	1	Latching
+/SwitchableOutput/relay_2/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/relay_2/Settings/Function	INT32	2	Manual
+/SwitchableOutput/relay_2/Settings/ValidFunctions	INT32	4	Manual
+/SwitchableOutput/relay_3/State	INT32	0	0
+/SwitchableOutput/relay_3/Status	INT32	0	Off
+/SwitchableOutput/relay_3/Name	STRING	Relay 3	Relay 3
+/SwitchableOutput/relay_3/Settings/Group	STRING		
+/SwitchableOutput/relay_3/Settings/CustomName	STRING		
+/SwitchableOutput/relay_3/Settings/ShowUIControl	INT32	1	1
+/SwitchableOutput/relay_3/Settings/Type	INT32	1	Latching
+/SwitchableOutput/relay_3/Settings/ValidTypes	INT32	3	Latching, Momentary
+/SwitchableOutput/relay_3/Settings/Function	INT32	2	Manual
+/SwitchableOutput/relay_3/Settings/ValidFunctions	INT32	4	Manual
+/CustomName	STRING	GX IO 2	GX IO 2
+/Serial	STRING	HQ2502VTENN	HQ2502VTENN
+/State	INT32	256	Connected
+
+1	/SwitchableOutput/pwm_4/Status	INT32	9	On
+1	/SwitchableOutput/pwm_4/State	INT32	1	1
+2	/SwitchableOutput/relay_3/Status	INT32	9	On
+2	/SwitchableOutput/relay_3/State	INT32	1	1
+3	/SwitchableOutput/pwm_4/Status	INT32	0	Off
+3	/SwitchableOutput/pwm_4/State	INT32	0	0
+4	/SwitchableOutput/pwm_2/Status	INT32	9	On
+4	/SwitchableOutput/pwm_2/State	INT32	1	1
+4	/SwitchableOutput/pwm_3/Status	INT32	0	Off
+4	/SwitchableOutput/pwm_3/State	INT32	0	0
+5	/SwitchableOutput/output_8/Status	INT32	0	Off
+5	/SwitchableOutput/output_8/State	INT32	0	0
+26	/SwitchableOutput/output_6/Status	INT32	0	Off
+26	/SwitchableOutput/output_6/State	INT32	0	0
+26	/SwitchableOutput/relay_1/State	INT32	0	0
+26	/SwitchableOutput/relay_1/Status	INT32	0	Off
+28	/SwitchableOutput/relay_2/State	INT32	1	1
+28	/SwitchableOutput/relay_2/Status	INT32	9	On
+32	/SwitchableOutput/output_5/Status	INT32	9	On
+32	/SwitchableOutput/output_5/State	INT32	1	1
+32	/SwitchableOutput/output_5/Status	INT32	0	Off
+32	/SwitchableOutput/output_5/State	INT32	0	0
+67	/SwitchableOutput/pwm_2/Status	INT32	0	Off
+67	/SwitchableOutput/pwm_2/State	INT32	0	0
+68	/SwitchableOutput/pwm_4/Dimming	INT32	25	25%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	27	27%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	30	30%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	35	35%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	45	45%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	54	54%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	62	62%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	69	69%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	75	75%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	78	78%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	79	79%
+68	/SwitchableOutput/pwm_4/Dimming	INT32	80	80%
+69	/SwitchableOutput/pwm_4/Status	INT32	9	On
+69	/SwitchableOutput/pwm_4/State	INT32	1	1
+69	/SwitchableOutput/relay_3/Status	INT32	0	Off
+69	/SwitchableOutput/relay_3/State	INT32	0	0
+71	/SwitchableOutput/output_8/Status	INT32	9	On
+71	/SwitchableOutput/output_8/State	INT32	1	1
+72	/SwitchableOutput/pwm_3/Dimming	INT32	74	74%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	73	73%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	69	69%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	63	63%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	55	55%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	47	47%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	40	40%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	34	34%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	31	31%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	30	30%
+72	/SwitchableOutput/pwm_3/Dimming	INT32	28	28%
+72	/SwitchableOutput/pwm_3/Status	INT32	9	On
+73	/SwitchableOutput/pwm_3/State	INT32	1	1
+73	/SwitchableOutput/output_8/Status	INT32	0	Off
+73	/SwitchableOutput/output_8/State	INT32	0	0
+74	/SwitchableOutput/pwm_3/Status	INT32	0	Off
+74	/SwitchableOutput/pwm_3/State	INT32	0	0
+74	/SwitchableOutput/output_8/Status	INT32	9	On
+74	/SwitchableOutput/output_8/State	INT32	1	1
+75	/SwitchableOutput/pwm_2/Status	INT32	9	On
+75	/SwitchableOutput/pwm_2/State	INT32	1	1
+76	/SwitchableOutput/pwm_4/Status	INT32	0	Off
+76	/SwitchableOutput/pwm_4/State	INT32	0	0
+76	/SwitchableOutput/relay_3/Status	INT32	9	On
+76	/SwitchableOutput/relay_3/State	INT32	1	1
+91	/SwitchableOutput/pwm_1/Dimming	INT32	91	91%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	90	90%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	89	89%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	87	87%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	85	85%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	82	82%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	78	78%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	73	73%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	67	67%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	62	62%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	57	57%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	55	55%
+91	/SwitchableOutput/pwm_1/Dimming	INT32	52	52%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	49	49%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	46	46%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	43	43%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	39	39%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	35	35%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	30	30%
+92	/SwitchableOutput/pwm_1/Dimming	INT32	29	29%
+92	/SwitchableOutput/pwm_1/Status	INT32	0	Off
+92	/SwitchableOutput/pwm_1/State	INT32	0	0
+92	/SwitchableOutput/output_7/Status	INT32	9	On
+92	/SwitchableOutput/output_7/State	INT32	1	1
+92	/SwitchableOutput/output_7/Status	INT32	0	Off
+92	/SwitchableOutput/output_7/State	INT32	0	0
+94	/SwitchableOutput/output_7/Status	INT32	9	On
+94	/SwitchableOutput/output_7/State	INT32	1	1
+94	/SwitchableOutput/output_7/Status	INT32	0	Off
+94	/SwitchableOutput/output_7/State	INT32	0	0
+94	/SwitchableOutput/output_7/Status	INT32	9	On
+94	/SwitchableOutput/output_7/State	INT32	1	1
+94	/SwitchableOutput/output_7/Status	INT32	0	Off
+94	/SwitchableOutput/output_7/State	INT32	0	0
+101	/SwitchableOutput/output_6/Status	INT32	9	On
+101	/SwitchableOutput/output_6/State	INT32	1	1
+102	/SwitchableOutput/relay_1/State	INT32	1	1
+103	/SwitchableOutput/relay_1/Status	INT32	9	On
+103	/SwitchableOutput/relay_2/State	INT32	0	0
+103	/SwitchableOutput/relay_2/Status	INT32	0	Off
+109	/SwitchableOutput/output_5/Status	INT32	9	On
+109	/SwitchableOutput/output_5/State	INT32	1	1
+109	/SwitchableOutput/output_5/Status	INT32	0	Off
+109	/SwitchableOutput/output_5/State	INT32	0	0

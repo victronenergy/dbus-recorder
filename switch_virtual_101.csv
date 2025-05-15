@@ -1,0 +1,67 @@
+com.victronenergy.switch.virtual_6947f67ce8dc49ba
+/Connected	INT32	1	1
+/State	INT32	256	256
+/DeviceInstance	INT32	101	101
+/CustomName	STRING	Virtual switch	Virtual switch
+/Serial	STRING	6947f67ce8dc49ba	6947f67ce8dc49ba
+/SwitchableOutput/output_1/State	INT32	1	1
+/SwitchableOutput/output_1/Status	INT32	0	0
+/SwitchableOutput/output_1/Name	STRING	Output 1	Output 1
+/SwitchableOutput/output_1/Settings/Group	STRING		
+/SwitchableOutput/output_1/Settings/CustomName	STRING		
+/SwitchableOutput/output_1/Settings/Type	INT32	1	1
+/SwitchableOutput/output_1/Settings/ValidTypes	INT32	3	3
+/SwitchableOutput/output_2/State	INT32	1	1
+/SwitchableOutput/output_2/Status	INT32	0	0
+/SwitchableOutput/output_2/Name	STRING	Output 2	Output 2
+/SwitchableOutput/output_2/Settings/Group	STRING		
+/SwitchableOutput/output_2/Settings/CustomName	STRING		
+/SwitchableOutput/output_2/Settings/Type	INT32	1	1
+/SwitchableOutput/output_2/Settings/ValidTypes	INT32	3	3
+/SwitchableOutput/output_3/State	INT32	1	1
+/SwitchableOutput/output_3/Status	INT32	0	0
+/SwitchableOutput/output_3/Name	STRING	Output 3	Output 3
+/SwitchableOutput/output_3/Settings/Group	STRING		
+/SwitchableOutput/output_3/Settings/CustomName	STRING		
+/SwitchableOutput/output_3/Settings/Type	INT32	1	1
+/SwitchableOutput/output_3/Settings/ValidTypes	INT32	3	3
+/SwitchableOutput/pwm_1/State	INT32	1	On
+/SwitchableOutput/pwm_1/Status	INT32	0	0
+/SwitchableOutput/pwm_1/Name	STRING	PWM 1	PWM 1
+/SwitchableOutput/pwm_1/Settings/Group	STRING		
+/SwitchableOutput/pwm_1/Settings/CustomName	STRING		
+/SwitchableOutput/pwm_1/Settings/Type	INT32	2	Dimmable/PWM
+/SwitchableOutput/pwm_1/Settings/ValidTypes	INT32	4	4
+/SwitchableOutput/pwm_1/Dimming	DOUBLE	49.0	49.0%
+/Mgmt/Connection	STRING	Virtual	Virtual
+/Mgmt/ProcessName	STRING	dbus-victron-virtual	dbus-victron-virtual
+/Mgmt/ProcessVersion	STRING	0.1.14	0.1.14
+/ProductId	INT32	49257	c069
+/ProductName	STRING	Virtual switch	Virtual switch
+
+29	/SwitchableOutput/output_1/State	INT32	1	1
+29	/SwitchableOutput/output_2/State	INT32	1	1
+29	/SwitchableOutput/output_3/State	INT32	1	1
+34	/SwitchableOutput/output_1/State	INT32	0	0
+35	/SwitchableOutput/output_2/State	INT32	0	0
+35	/SwitchableOutput/output_3/State	INT32	0	0
+36	/SwitchableOutput/pwm_1/State	INT32	0	Off
+38	/SwitchableOutput/pwm_1/Dimming	DOUBLE	51.0	51.0%
+38	/SwitchableOutput/pwm_1/Dimming	DOUBLE	51.0	51.0%
+38	/SwitchableOutput/pwm_1/Dimming	DOUBLE	53.0	53.0%
+38	/SwitchableOutput/pwm_1/Dimming	DOUBLE	57.0	57.0%
+38	/SwitchableOutput/pwm_1/Dimming	DOUBLE	62.0	62.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	68.0	68.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	75.0	75.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	81.0	81.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	85.0	85.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	87.0	87.0%
+39	/SwitchableOutput/pwm_1/Dimming	DOUBLE	87.0	87.0%
+39	/SwitchableOutput/pwm_1/State	INT32	1	On
+111	/SwitchableOutput/output_1/State	INT32	1	1
+111	/SwitchableOutput/output_3/State	INT32	1	1
+112	/SwitchableOutput/pwm_1/State	INT32	0	Off
+118	/SwitchableOutput/pwm_1/State	INT32	1	On
+118	/SwitchableOutput/output_3/State	INT32	0	0
+119	/SwitchableOutput/output_2/State	INT32	1	1
+119	/SwitchableOutput/output_1/State	INT32	0	0
