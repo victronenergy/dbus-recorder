@@ -24,6 +24,11 @@ case "$1" in
 			demo2_blackwater.csv demo2_fridge.csv demo2_water.csv \
 			demo2_hydropack_battery.csv demo2_cabin.csv demo2_outside.csv
         ;;
+    "4")
+        # Small electric boat demo
+		start boat_battery.csv boat_gps.csv boat_modem.csv \
+			boat_motordrive.csv
+        ;;
     *)
         # ESS demo
         start grid.csv pvinverter.csv solarcharger.csv vebus.csv battery.csv

@@ -1,0 +1,19 @@
+com.victronenergy.modem
+/ProductName	STRING	GX LTE 4G	GX LTE 4G (USB2)
+/ProductId	UINT32	41315	A163
+/Mgmt/Connection	STRING	USB	USB
+/Mgmt/ProcessVersion	STRING	1.07	1.07
+/Mgmt/ProcessName	STRING	gps_dbus	gps_dbus
+/CustomName	STRING	GX LTE 4G	GX LTE 4G
+/Connected	UINT32	1	1
+/IMEI	STRING	863427041986440	863427041986440
+/IP	STRING	1.2.3.4	1.2.3.4
+/Model	STRING	SIMCOM_SIM7600SA	SIMCOM_SIM7600SA
+/NetworkName	STRING	Telstra	Telstra
+/NetworkType	STRING	LTE	LTE
+/RegStatus	UINT32	1	1
+/Roaming	UINT32	0	0
+/SignalStrength	UINT32	17	17
+/SimStatus	UINT32	1000	1000
+
+1	/SignalStrength UINT32  17	17
