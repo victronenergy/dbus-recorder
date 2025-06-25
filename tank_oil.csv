@@ -14,6 +14,7 @@ com.victronenergy.tank.socketcan_can0_di4_uc69
 /FirmwareVersion	STRING	v3.0.2V	v3.0.2V
 /ProductName	STRING	Tank sensor	Tank sensor
 /FluidType	UINT32	4	4
+/Status	UINT32	0	Ok
 
 13	/Level	INT32	91	91%
 15	/Level	DOUBLE	91.10800170898438	91.1%
